@@ -14,8 +14,8 @@ namespace DataKlient
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-           // MainPage = new AppShell();
-           MainPage= new LoginPage();
+           MainPage = new AppShell();
+           //MainPage= new LoginPage();
         }
 
         protected override void OnStart()

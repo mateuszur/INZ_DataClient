@@ -2,26 +2,47 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ViewModel="clr-namespace:DataKlient.ViewModels"
              mc:Ignorable="d"
              x:Class="DataKlient.Views.LoginPage"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             >
+    
+    <ContentPage.BindingContext>
+        <ViewModel:LoginViewModel />
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
-            <Label Text="Witaj użytkowniku" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" FontSize="20" />
+            
+                <Label Text="Witaj użytkowniku" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" FontSize="20" />
 
-            <Label Text="Login" />
-            <Entry Placeholder="Wprowadź login" />
+            <!-- Zmieniona struktura dla pól Login i Hasło -->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,10,0,0">
+                <StackLayout>
+                    <Label Text="Login" />
+                    <Entry Placeholder="Wprowadź login" WidthRequest="300" />
+               
+                
+                    <Label Text="Hasło" />
+                    <Entry Placeholder="Wprowadź hasło" IsPassword="{Binding IsPasswordEnabled}" />
 
-            <Label Text="Hasło" />
-            <Entry Placeholder="Wprowadź hasło" IsPassword="True" />
+                    <StackLayout Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding IsCheckBoxChecked, Mode=TwoWay}" />
+                    <Label Text="Pokaż hasło" />
+                    </StackLayout>
 
-            <StackLayout Orientation="Horizontal">
-                <CheckBox />
-                <Label Text="Pokaż hasło" VerticalOptions="Center" />
+                </StackLayout>
             </StackLayout>
 
-            <Button Text="Zaloguj" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" />
+            <Button Text="Zaloguj" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" WidthRequest="170" Command="{Binding LoginCommand, Mode=TwoWay}"  />
+            <Button Text="Ustawienia zaawansowane" HorizontalOptions="CenterAndExpand" Margin="0,10,0,0"  WidthRequest="170" />
+            
+      
+           
+
         </StackLayout>
+        
     </ContentPage.Content>
+
 </ContentPage>
