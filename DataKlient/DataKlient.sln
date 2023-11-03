@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataKlient.UWP", "DataKlien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataKlient.iOS", "DataKlient.iOS\DataKlient.iOS.csproj", "{2283E419-873C-4C9E-BBDC-2A16A056B5C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataKlient", "DataKlient\DataKlient.csproj", "{3A7B9C07-204F-4B55-9D43-77FE518D2A8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataKlient", "DataKlient\DataKlient.csproj", "{3A7B9C07-204F-4B55-9D43-77FE518D2A8F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BD77FD72-172E-4A0A-AC5C-819B7D6469BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

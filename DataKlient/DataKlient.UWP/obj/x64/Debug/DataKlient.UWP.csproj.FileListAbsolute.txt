@@ -61,3 +61,5 @@ D:\INŻ\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\obj\x64\Debug\MultipleQua
 D:\INŻ\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\obj\x64\Debug\ProjectArchitectures.txt
 D:\INŻ\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\obj\x64\Debug\.winmd_cache\$Microsoft.Graphics.Canvas.winmd_636160715180000000.json
 D:\INŻ\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\obj\x64\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_638194388980000000.json
+D:\INŻ\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\Xamarin.iOS.dll
+D:\INŻ\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\Xamarin.iOS.xml

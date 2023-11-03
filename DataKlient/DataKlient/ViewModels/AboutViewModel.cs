@@ -9,7 +9,7 @@ namespace DataKlient.ViewModels
     {
         public AboutViewModel()
         {
-            Title = "About";
+            Title = "O aplikacji";
             OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
         }
 

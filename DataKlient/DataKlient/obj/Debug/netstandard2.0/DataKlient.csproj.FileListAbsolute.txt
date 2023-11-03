@@ -18,3 +18,6 @@ D:\INŻ\mateuszur\INZ_Client\DataKlient\DataKlient\obj\Debug\netstandard2.0\Data
 D:\INŻ\mateuszur\INZ_Client\DataKlient\DataKlient\obj\Debug\netstandard2.0\refint\DataKlient.dll
 D:\INŻ\mateuszur\INZ_Client\DataKlient\DataKlient\obj\Debug\netstandard2.0\DataKlient.pdb
 D:\INŻ\mateuszur\INZ_Client\DataKlient\DataKlient\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
+D:\INŻ\mateuszur\INZ_Client\DataKlient\DataKlient\bin\Debug\netstandard2.0\Xamarin.iOS.dll
+D:\INŻ\mateuszur\INZ_Client\DataKlient\DataKlient\bin\Debug\netstandard2.0\Xamarin.iOS.xml
+D:\INŻ\mateuszur\INZ_Client\DataKlient\DataKlient\obj\Debug\netstandard2.0\DataKlient.csproj.CopyComplete

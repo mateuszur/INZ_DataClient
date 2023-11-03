@@ -30,7 +30,7 @@ namespace DataKlient.ViewModels
         {
 
           
-             Shell.Current.GoToAsync("//AboutPage");
+             Shell.Current.GoToAsync("//ItemsPage");
 
         }
 

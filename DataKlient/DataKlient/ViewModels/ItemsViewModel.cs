@@ -4,7 +4,11 @@ using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using UIKit;
+using Xamarin.Essentials;
 using Xamarin.Forms;
+
+
 
 namespace DataKlient.ViewModels
 {
@@ -19,7 +23,7 @@ namespace DataKlient.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = "Pliki";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
@@ -67,9 +71,67 @@ namespace DataKlient.ViewModels
             }
         }
 
-        private async void OnAddItem(object obj)
+
+        private async void OnAddItem_IOS()
         {
-            await Shell.Current.GoToAsync(nameof(NewItemPage));
+            //await Shell.Current.GoToAsync(nameof(NewItemPage));
+
+
+                var actionSheet = new UIActionSheet("Wybierz opcję", null, "Anuluj", null, "Przeglądaj pliki", "Zrób zdjęcie");
+                actionSheet.Clicked += (sender, args) =>
+                {
+                    if (args.ButtonIndex == 0)
+                    {
+
+                        // Wybrano "Przeglądaj pliki"
+                        // Tutaj możesz uruchomić przeglądanie plików na iOS.
+                    }
+                    else if (args.ButtonIndex == 1)
+                    {
+                        // Wybrano "Zrób zdjęcie"
+                        // Tutaj możesz uruchomić aparat na iOS w celu zrobienia zdjęcia.
+                    }
+                };
+                actionSheet.ShowInView(UIApplication.SharedApplication.KeyWindow);
+        }
+
+        private async void OnAddItem_UWP()
+        {
+           
+                try
+                {
+                    var result = await FilePicker.PickAsync();
+                    if (result != null)
+                    {
+                        // Wybrano plik. Możesz wykonać operacje na wybranym pliku, np. wyświetlić jego ścieżkę.
+                        Console.WriteLine($"Wybrano plik: {result.FullPath}");
+                    }
+                    else
+                    {
+                        // Anulowano wybór pliku.
+                        Console.WriteLine("Anulowano wybór pliku.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Błąd przeglądania plików: {ex.Message}");
+                }
+           
+                   
+        }
+
+        private void OnAddItem(object obj)
+        {
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    OnAddItem_IOS();
+                    break;
+
+                case Device.UWP:
+                    OnAddItem_UWP();
+                    break;
+            }
         }
 
         async void OnItemSelected(Item item)
@@ -80,5 +142,8 @@ namespace DataKlient.ViewModels
             // This will push the ItemDetailPage onto the navigation stack
             await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}");
         }
+
+
+        }
     }
-}
+

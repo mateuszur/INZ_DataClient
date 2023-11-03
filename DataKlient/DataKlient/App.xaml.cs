@@ -15,6 +15,7 @@ namespace DataKlient
 
             DependencyService.Register<MockDataStore>();
            MainPage = new AppShell();
+            MainPage.Title = "Data Klient";
            //MainPage= new LoginPage();
         }
 
