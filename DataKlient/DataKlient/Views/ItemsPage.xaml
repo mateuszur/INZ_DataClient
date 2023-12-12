@@ -19,7 +19,8 @@
                 ItemsSource="{Binding Items}"
                 SelectionMode="None">
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                       
+                <!--<DataTemplate>
                     <StackLayout Padding="10" x:DataType="model:Item">
                         <Label Text="{Binding Text}" 
                             LineBreakMode="NoWrap" 
@@ -37,7 +38,38 @@
                             </TapGestureRecognizer>
                         </StackLayout.GestureRecognizers>
                     </StackLayout>
+                </DataTemplate>-->
+
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Opcja 1" IconImageSource="icon1.png" BackgroundColor="Green" Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel}}, Path=Option1Command}" />
+                                <SwipeItem Text="Opcja 2" IconImageSource="icon2.png" BackgroundColor="Red" Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel}}, Path=Option2Command}" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <StackLayout Padding="10" x:DataType="model:Item">
+                            <Label Text="{Binding Text}" 
+                LineBreakMode="NoWrap" 
+                Style="{DynamicResource ListItemTextStyle}" 
+                FontSize="16" />
+                            <Label Text="{Binding Description}" 
+                LineBreakMode="NoWrap"
+                Style="{DynamicResource ListItemDetailTextStyle}"
+                FontSize="13" />
+                       
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer 
+                NumberOfTapsRequired="1"
+                Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel}}, Path=ItemTapped}"		
+                CommandParameter="{Binding .}">
+                            </TapGestureRecognizer>
+                        </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </SwipeView>
+                    
                 </DataTemplate>
+
             </CollectionView.ItemTemplate>
         </CollectionView>
     </RefreshView>
