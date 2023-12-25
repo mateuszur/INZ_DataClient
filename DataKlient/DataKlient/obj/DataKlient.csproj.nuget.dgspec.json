@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\INŻ\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj": {}
+    "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj": {}
   },
   "projects": {
-    "D:\\INŻ\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj": {
+    "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\INŻ\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj",
+        "projectUniqueName": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj",
         "projectName": "DataKlient",
-        "projectPath": "D:\\INŻ\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj",
+        "projectPath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj",
         "packagesPath": "C:\\Users\\matik\\.nuget\\packages\\",
-        "outputPath": "D:\\INŻ\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\obj\\",
+        "outputPath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -54,11 +54,11 @@
             },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.8.0, )"
+              "version": "[1.8.1, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[5.0.0.2612, )"
+              "version": "[5.0.0.2622, )"
             }
           },
           "imports": [

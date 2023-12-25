@@ -1,1 +1,1 @@
-D:\INŻ\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\DataKlient.UWP.csproj;x64
+C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\DataKlient.UWP.csproj;x64

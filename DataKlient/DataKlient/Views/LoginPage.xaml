@@ -2,13 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ViewModel="clr-namespace:DataKlient.ViewModels"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:ViewModel="clr-namespace:DataKlient.ViewModels" xmlns:Views="clr-namespace:DataKlient.Views"
              mc:Ignorable="d"
              x:Class="DataKlient.Views.LoginPage"
              Shell.NavBarIsVisible="False"
              >
     
     <ContentPage.BindingContext>
+       
         <ViewModel:LoginViewModel />
     </ContentPage.BindingContext>
     
@@ -21,11 +23,11 @@
             <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,10,0,0">
                 <StackLayout>
                     <Label Text="Login" />
-                    <Entry Placeholder="Wprowadź login" WidthRequest="300" />
+                    <Entry x:Name="UserNameEntry" Placeholder="Wprowadź login" WidthRequest="300" />
                
                 
                     <Label Text="Hasło" />
-                    <Entry Placeholder="Wprowadź hasło" IsPassword="{Binding IsPasswordEnabled}" />
+                    <Entry x:Name="PasswordEntry"   Placeholder="Wprowadź hasło" IsPassword="{Binding IsPasswordEnabled}" />
 
                     <StackLayout Orientation="Horizontal">
                         <CheckBox IsChecked="{Binding IsCheckBoxChecked, Mode=TwoWay}" />
@@ -40,7 +42,8 @@
                 </StackLayout>
             </StackLayout>
 
-            <Button Text="Zaloguj" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" WidthRequest="170" Command="{Binding LoginCommand, Mode=TwoWay}"  />
+            <!--<Button Text="Zaloguj" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" WidthRequest="170" Command="{Binding LoginCommand, Mode=TwoWay}"  />-->
+            <Button Text="Zaloguj" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" WidthRequest="170"  Clicked="Button_ClickedAsync" />
             <Button Text="Ustawienia zaawansowane" HorizontalOptions="CenterAndExpand" Margin="0,10,0,0"  WidthRequest="170"  />
             
             <Button Text="Status serwera" HorizontalOptions="CenterAndExpand" Margin="0,10,0,0" WidthRequest="170" 

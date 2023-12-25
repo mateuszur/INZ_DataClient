@@ -12,20 +12,34 @@ namespace DataKlient.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
-     
+
+       private LoginViewModel viewModel = new LoginViewModel();
+       private string _usernaem;
+       private string _password;
 
         public LoginPage()
         {
             InitializeComponent();
+           
+            this.BindingContext = viewModel;
+           // this.BindingContext = new LoginViewModel();
 
-            this.BindingContext = new LoginViewModel();
             Routing.RegisterRoute(nameof(AboutPage), typeof(AboutPage));
-           // Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
+           
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void Button_ClickedAsync(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("//AboutPage");
+            _usernaem = UserNameEntry.Text;
+            _password= PasswordEntry.Text;
+
+            bool result = await viewModel.OnLoginClickedAsync(_usernaem, _password);
+
+            if (!result)
+            {
+                  await DisplayAlert("Błąd", "Podane dane logowania są nieprawidłowe", "OK");
+            }
         }
     }
+
 }

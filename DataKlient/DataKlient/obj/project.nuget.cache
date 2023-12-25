@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "xSxWLeVstYBXE/Gie6uzoFoZG1B54WQDNA5NPGo+NZRpSVfUxn+epM/HHMKK4S34ydHh1+C4sUre8QRQUD1PzA==",
+  "dgSpecHash": "XQyMfVv3QVoFwWXnAPJorGYFYuA5bx0aDKnV601KB5RqZxHWBX+pi8COSS1wr9Puj+QSY2oHXsncQmSpYPm6PA==",
   "success": true,
-  "projectFilePath": "D:\\INŻ\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj",
+  "projectFilePath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\matik\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\matik\\.nuget\\packages\\xamarin.essentials\\1.8.0\\xamarin.essentials.1.8.0.nupkg.sha512",
-    "C:\\Users\\matik\\.nuget\\packages\\xamarin.forms\\5.0.0.2612\\xamarin.forms.5.0.0.2612.nupkg.sha512"
+    "C:\\Users\\matik\\.nuget\\packages\\xamarin.essentials\\1.8.1\\xamarin.essentials.1.8.1.nupkg.sha512",
+    "C:\\Users\\matik\\.nuget\\packages\\xamarin.forms\\5.0.0.2622\\xamarin.forms.5.0.0.2622.nupkg.sha512"
   ],
   "logs": []
 }

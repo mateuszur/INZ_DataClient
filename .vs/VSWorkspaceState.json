@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Client"
+    "\\Client",
+    "\\DataKlient",
+    "\\DataKlient\\DataKlient",
+    "\\DataKlient\\DataKlient\\ViewModels"
   ],
-  "SelectedNode": "\\Client",
+  "SelectedNode": "\\DataKlient\\DataKlient\\ViewModels\\LoginViewModel.cs",
   "PreviewInSolutionExplorer": false
 }

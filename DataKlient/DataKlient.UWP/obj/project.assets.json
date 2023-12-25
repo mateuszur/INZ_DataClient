@@ -668,8 +668,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Essentials": "1.8.0",
-          "Xamarin.Forms": "5.0.0.2612"
+          "Xamarin.Essentials": "1.8.1",
+          "Xamarin.Forms": "5.0.0.2622"
         },
         "compile": {
           "bin/placeholder/DataKlient.dll": {}
@@ -1514,8 +1514,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Essentials": "1.8.0",
-          "Xamarin.Forms": "5.0.0.2612"
+          "Xamarin.Essentials": "1.8.1",
+          "Xamarin.Forms": "5.0.0.2622"
         },
         "compile": {
           "bin/placeholder/DataKlient.dll": {}
@@ -2361,8 +2361,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Essentials": "1.8.0",
-          "Xamarin.Forms": "5.0.0.2612"
+          "Xamarin.Essentials": "1.8.1",
+          "Xamarin.Forms": "5.0.0.2622"
         },
         "compile": {
           "bin/placeholder/DataKlient.dll": {}
@@ -3205,8 +3205,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Essentials": "1.8.0",
-          "Xamarin.Forms": "5.0.0.2612"
+          "Xamarin.Essentials": "1.8.1",
+          "Xamarin.Forms": "5.0.0.2622"
         },
         "compile": {
           "bin/placeholder/DataKlient.dll": {}
@@ -4051,8 +4051,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Essentials": "1.8.0",
-          "Xamarin.Forms": "5.0.0.2612"
+          "Xamarin.Essentials": "1.8.1",
+          "Xamarin.Forms": "5.0.0.2622"
         },
         "compile": {
           "bin/placeholder/DataKlient.dll": {}
@@ -4898,8 +4898,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Essentials": "1.8.0",
-          "Xamarin.Forms": "5.0.0.2612"
+          "Xamarin.Essentials": "1.8.1",
+          "Xamarin.Forms": "5.0.0.2622"
         },
         "compile": {
           "bin/placeholder/DataKlient.dll": {}
@@ -5744,8 +5744,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Essentials": "1.8.0",
-          "Xamarin.Forms": "5.0.0.2612"
+          "Xamarin.Essentials": "1.8.1",
+          "Xamarin.Forms": "5.0.0.2622"
         },
         "compile": {
           "bin/placeholder/DataKlient.dll": {}
@@ -6591,8 +6591,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Essentials": "1.8.0",
-          "Xamarin.Forms": "5.0.0.2612"
+          "Xamarin.Essentials": "1.8.1",
+          "Xamarin.Forms": "5.0.0.2622"
         },
         "compile": {
           "bin/placeholder/DataKlient.dll": {}
@@ -11373,11 +11373,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\INŻ\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.UWP\\DataKlient.UWP.csproj",
+      "projectUniqueName": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.UWP\\DataKlient.UWP.csproj",
       "projectName": "DataKlient.UWP",
-      "projectPath": "D:\\INŻ\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.UWP\\DataKlient.UWP.csproj",
+      "projectPath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.UWP\\DataKlient.UWP.csproj",
       "packagesPath": "C:\\Users\\matik\\.nuget\\packages\\",
-      "outputPath": "D:\\INŻ\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.UWP\\obj\\",
+      "outputPath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.UWP\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -11399,8 +11399,8 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "D:\\INŻ\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj": {
-              "projectPath": "D:\\INŻ\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj"
+            "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj": {
+              "projectPath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj"
             }
           }
         }
@@ -11452,5 +11452,41 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Wykryto obniżenie wersji pakietu: Xamarin.Essentials z 1.8.1 na 1.8.0. Aby wybrać inną wersję, odwołaj się do pakietu bezpośrednio z projektu. \r\n DataKlient.UWP -> DataKlient -> Xamarin.Essentials (>= 1.8.1) \r\n DataKlient.UWP -> Xamarin.Essentials (>= 1.8.0)",
+      "libraryId": "Xamarin.Essentials",
+      "targetGraphs": [
+        "UAP,Version=v10.0.16299",
+        "UAP,Version=v10.0.16299/win10-arm",
+        "UAP,Version=v10.0.16299/win10-arm-aot",
+        "UAP,Version=v10.0.16299/win10-arm64-aot",
+        "UAP,Version=v10.0.16299/win10-x64",
+        "UAP,Version=v10.0.16299/win10-x64-aot",
+        "UAP,Version=v10.0.16299/win10-x86",
+        "UAP,Version=v10.0.16299/win10-x86-aot"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Wykryto obniżenie wersji pakietu: Xamarin.Forms z 5.0.0.2622 na 5.0.0.2612. Aby wybrać inną wersję, odwołaj się do pakietu bezpośrednio z projektu. \r\n DataKlient.UWP -> DataKlient -> Xamarin.Forms (>= 5.0.0.2622) \r\n DataKlient.UWP -> Xamarin.Forms (>= 5.0.0.2612)",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "UAP,Version=v10.0.16299",
+        "UAP,Version=v10.0.16299/win10-arm",
+        "UAP,Version=v10.0.16299/win10-arm-aot",
+        "UAP,Version=v10.0.16299/win10-arm64-aot",
+        "UAP,Version=v10.0.16299/win10-x64",
+        "UAP,Version=v10.0.16299/win10-x64-aot",
+        "UAP,Version=v10.0.16299/win10-x86",
+        "UAP,Version=v10.0.16299/win10-x86-aot"
+      ]
+    }
+  ]
 }

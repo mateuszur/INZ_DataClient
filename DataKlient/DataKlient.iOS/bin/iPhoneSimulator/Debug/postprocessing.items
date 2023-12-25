@@ -7,9 +7,9 @@
       <dSYMSourcePathExists>false</dSYMSourcePathExists>
       <NoSymbolStrip>true</NoSymbolStrip>
       <dSYMInfoPlistRelativePath>DataKlient.iOS.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
-      <SymbolFile>\Users\mateuszurbanczyk\Library\Caches\Xamarin\mtbs\builds\DataKlient.iOS\c70994f587e33a1757e8438cdc7fd8cab8df6a6b17d11d101769296656734010\obj\iPhoneSimulator\Debug\mtouch-symbols.list</SymbolFile>
+      <SymbolFile>\Users\mateuszurbanczyk\Library\Caches\Xamarin\mtbs\builds\DataKlient.iOS\65fecdc197b0bc689adf4b4a8dfb2712e00c05f9fa5f33983a93bd9cd8193b5e\obj\iPhoneSimulator\Debug\mtouch-symbols.list</SymbolFile>
       <DSymName>DataKlient.iOS.app.dSYM</DSymName>
-      <SourceProjectPath>D:\INŻ\mateuszur\INZ_Client\DataKlient\DataKlient.iOS</SourceProjectPath>
+      <SourceProjectPath>C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.iOS</SourceProjectPath>
     </_PostProcessingItem>
   </ItemGroup>
 </Project>
