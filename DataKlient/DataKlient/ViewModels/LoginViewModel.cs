@@ -1,8 +1,12 @@
-﻿using DataKlient.Views;
+﻿using DataKlient.Models;
+using DataKlient.Services;
+using DataKlient.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
+using System.Net;
 using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -28,9 +32,13 @@ namespace DataKlient.ViewModels
 
         public LoginViewModel()
         {
-          // LoginCommand = new Command(OnLoginClicked);
-          
-           _timer= new Timer (CheckServerAvailability, null, 0, 20000 );
+            
+            //if (CheckLocalSession())
+            //{
+            //    _ = Shell.Current.GoToAsync("//ItemsPage");
+            //}
+           
+             _timer = new Timer (CheckServerAvailability, null, 0, 1500 );
 
         }
 
@@ -59,6 +67,18 @@ namespace DataKlient.ViewModels
 
                     _ = Shell.Current.GoToAsync("//ItemsPage");
                     
+                    SessionLocalDetailsService _session= new SessionLocalDetailsService();
+                    SessionLocalDetailsItem _newSession = new SessionLocalDetailsItem();
+
+                    _newSession.sessionID = parts[1];
+                    _newSession.endSesionDate= DateTime.Parse(parts[2]);
+                    _newSession.privileges = parts[3];
+                    _newSession.userLogin = parts[4];
+                    _newSession.userID= parts[5];
+                    _newSession.isValid = true;
+
+                   await  _session.AddItem(_newSession);
+
                     client.Close();
                     return true;
 
@@ -171,7 +191,7 @@ namespace DataKlient.ViewModels
                 byte[] data = Encoding.ASCII.GetBytes("Ping");
                await _stream.WriteAsync(data, 0, data.Length);
 
-                await Task.Delay(15000);
+                await Task.Delay(1750);
                 data = new byte[256];
 
                 int bytes = await _stream.ReadAsync(data, 0, data.Length);
@@ -198,24 +218,66 @@ namespace DataKlient.ViewModels
             }
         }
 
-
-        //    public string SendRequest(string request)
-        //{
-        //    byte[] requestData = Encoding.ASCII.GetBytes(request);
-        //    _stream.Write(requestData, 0, requestData.Length);
-
-        //    byte[] buffer = new byte[1024];
-        //    int byteCount = _stream.Read(buffer, 0, buffer.Length);
-
-        //    string response = Encoding.ASCII.GetString(buffer, 0, byteCount);
-        //    //Console.WriteLine("Odpowiedź od serwera: " + response);
-        //    return request;
-        //}
+        //Koniec metody sprawdzająca dostępność serwera i ustawiająca odpowiedni kolor
 
 
+        //Metody sprawdzajace czy są loklane sesje- sesja na serwerze 24h
+        private async Task<bool> CheckLocalSessionAsync()
+        {
+            try {
+                SessionLocalDetailsService _session = new SessionLocalDetailsService();
+                SessionLocalDetailsItem _activSession = new SessionLocalDetailsItem();
+
+                _activSession = await _session.GetItems();
+                if (_activSession != null)
+                {
+                    TcpClient client = new TcpClient("185.230.225.4", 3333);
+                    NetworkStream stream = client.GetStream();
+
+                    byte[] dataSessio = Encoding.ASCII.GetBytes("IsSessionValid " + _activSession.sessionID + " " + _activSession.userID);
+                    stream.Write(dataSessio, 0, dataSessio.Length);
+                    await Task.Delay(1000);
 
 
+                    dataSessio = new byte[256];
 
-        // Metody sprawdzająca dostępność serwera i ustawiająca odpowiedni kolor
+                    int bytes = stream.Read(dataSessio, 0, dataSessio.Length);
+                    string responseData = Encoding.ASCII.GetString(dataSessio, 0, bytes);
+
+
+                    if (responseData == "Sesion is valid")
+                    {
+                        return true;
+                    }else
+                    {
+                        return false;
+                    }
+
+
+                }
+                else { return false; }
+
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+
+        private bool CheckLocalSession()
+        {
+            // Logika sprawdzająca dostępność serwera
+            Task<bool> temp = CheckLocalSessionAsync();
+            bool isSessionValid = temp.Result;
+            if (isSessionValid)
+            {
+                return true;
+            }else
+            { return false; }    
+           
+        }
+
+
     }
 }

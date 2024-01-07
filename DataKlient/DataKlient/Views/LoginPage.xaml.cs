@@ -22,9 +22,6 @@ namespace DataKlient.Views
             InitializeComponent();
            
             this.BindingContext = viewModel;
-           // this.BindingContext = new LoginViewModel();
-
-            Routing.RegisterRoute(nameof(AboutPage), typeof(AboutPage));
            
         }
 

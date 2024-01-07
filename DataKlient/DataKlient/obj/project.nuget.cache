@@ -1,12 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "XQyMfVv3QVoFwWXnAPJorGYFYuA5bx0aDKnV601KB5RqZxHWBX+pi8COSS1wr9Puj+QSY2oHXsncQmSpYPm6PA==",
+  "dgSpecHash": "hlfFGouA3ryTE1qyJCfBfEpjB7AY0Zr02WJkRDCGHJ0a3ZQXjT0AoEviAgTRwRpKPr434BPW6xoUdumU3ER+Og==",
   "success": true,
   "projectFilePath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\matik\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\matik\\.nuget\\packages\\sqlite-net-pcl\\1.8.116\\sqlite-net-pcl.1.8.116.nupkg.sha512",
+    "C:\\Users\\matik\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.4\\sqlitepclraw.bundle_green.2.0.4.nupkg.sha512",
+    "C:\\Users\\matik\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
+    "C:\\Users\\matik\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.4\\sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",
+    "C:\\Users\\matik\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.0.4\\sqlitepclraw.provider.e_sqlite3.2.0.4.nupkg.sha512",
+    "C:\\Users\\matik\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\matik\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\matik\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\xamarin.essentials\\1.8.1\\xamarin.essentials.1.8.1.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\xamarin.forms\\5.0.0.2622\\xamarin.forms.5.0.0.2622.nupkg.sha512"
   ],

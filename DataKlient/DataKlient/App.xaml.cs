@@ -1,4 +1,5 @@
-﻿using DataKlient.Services;
+﻿using DataKlient.Models;
+using DataKlient.Services;
 using DataKlient.Views;
 using System;
 using Xamarin.Forms;
@@ -12,15 +13,21 @@ namespace DataKlient
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
+      
+           DependencyService.Register<MockDataStore>();
+           
            MainPage = new AppShell();
-            MainPage.Title = "Data Klient";
-           //MainPage= new LoginPage();
+
+           
+
+           MainPage.Title = "Data Klient";
+         
         }
 
-        protected override void OnStart()
+        protected override async void OnStart()
         {
+        
+
         }
 
         protected override void OnSleep()

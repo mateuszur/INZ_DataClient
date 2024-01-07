@@ -30,45 +30,69 @@
     <AppXManifest Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-12-25T17:17:29.210</Modified>
+      <Modified>2024-01-07T10:59:24.128</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\DataKlient.UWP.exe">
       <PackagePath>entrypoint\DataKlient.UWP.exe</PackagePath>
-      <Modified>2023-12-25T17:17:28.054</Modified>
+      <Modified>2024-01-06T20:58:24.190</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x64.microsoft.netcore.universalwindowsplatform\6.2.14\runtimes\win10-x64\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
       <Modified>2022-06-10T20:23:28.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\sqlite-net-pcl\1.8.116\lib\netstandard2.0\SQLite-net.dll">
+      <PackagePath>SQLite-net.dll</PackagePath>
+      <Modified>2021-09-02T21:04:32.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\sqlitepclraw.bundle_green\2.0.4\lib\netstandard2.0\SQLitePCLRaw.batteries_v2.dll">
+      <PackagePath>SQLitePCLRaw.batteries_v2.dll</PackagePath>
+      <Modified>2020-09-03T17:13:26.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\sqlitepclraw.core\2.0.4\lib\netstandard2.0\SQLitePCLRaw.core.dll">
+      <PackagePath>SQLitePCLRaw.core.dll</PackagePath>
+      <Modified>2020-09-03T17:13:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\sqlitepclraw.lib.e_sqlite3\2.0.4\runtimes\win10-x64\nativeassets\uap10.0\e_sqlite3.dll">
+      <PackagePath>e_sqlite3.dll</PackagePath>
+      <Modified>2020-08-17T14:39:00.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\sqlitepclraw.provider.e_sqlite3\2.0.4\lib\uap10.0\SQLitePCLRaw.provider.e_sqlite3.dll">
+      <PackagePath>SQLitePCLRaw.provider.e_sqlite3.dll</PackagePath>
+      <Modified>2020-09-03T17:13:06.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\system.runtime.compilerservices.unsafe\4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll">
+      <PackagePath>System.Runtime.CompilerServices.Unsafe.dll</PackagePath>
+      <Modified>2018-09-18T19:38:10.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\win2d.uwp\1.20.0\runtimes\win10-x64\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
       <Modified>2016-11-30T02:58:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\xamarin.essentials\1.8.0\lib\uap10.0.16299\Xamarin.Essentials.dll">
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\xamarin.essentials\1.8.1\lib\uap10.0.16299\Xamarin.Essentials.dll">
       <PackagePath>Xamarin.Essentials.dll</PackagePath>
-      <Modified>2023-08-10T17:57:06.000</Modified>
+      <Modified>2023-12-15T12:23:54.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\xamarin.forms\5.0.0.2612\lib\uap10.0.16299\Xamarin.Forms.Core.dll">
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\xamarin.forms\5.0.0.2622\lib\uap10.0.16299\Xamarin.Forms.Core.dll">
       <PackagePath>Xamarin.Forms.Core.dll</PackagePath>
-      <Modified>2023-08-10T16:34:28.000</Modified>
+      <Modified>2023-11-09T13:18:34.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\xamarin.forms\5.0.0.2612\lib\uap10.0.16299\Xamarin.Forms.Platform.UAP.dll">
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\xamarin.forms\5.0.0.2622\lib\uap10.0.16299\Xamarin.Forms.Platform.UAP.dll">
       <PackagePath>Xamarin.Forms.Platform.UAP.dll</PackagePath>
-      <Modified>2023-08-10T16:34:50.000</Modified>
+      <Modified>2023-11-09T13:18:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\xamarin.forms\5.0.0.2612\lib\uap10.0.16299\Xamarin.Forms.Platform.dll">
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\xamarin.forms\5.0.0.2622\lib\uap10.0.16299\Xamarin.Forms.Platform.dll">
       <PackagePath>Xamarin.Forms.Platform.dll</PackagePath>
-      <Modified>2023-08-10T16:34:50.000</Modified>
+      <Modified>2023-11-09T13:18:10.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\xamarin.forms\5.0.0.2612\lib\uap10.0.16299\Xamarin.Forms.Xaml.dll">
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\xamarin.forms\5.0.0.2622\lib\uap10.0.16299\Xamarin.Forms.Xaml.dll">
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
-      <Modified>2023-08-10T16:34:52.000</Modified>
+      <Modified>2023-11-09T13:18:32.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\bin\Debug\netstandard2.0\DataKlient.dll">
       <PackagePath>DataKlient.dll</PackagePath>
-      <Modified>2023-12-25T17:17:22.652</Modified>
+      <Modified>2024-01-07T10:59:12.944</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\bin\Debug\netstandard2.0\Xamarin.iOS.dll">
       <PackagePath>Xamarin.iOS.dll</PackagePath>
@@ -82,9 +106,9 @@
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
       <Modified>2023-05-11T21:54:58.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\xamarin.forms\5.0.0.2612\lib\uap10.0.16299\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\xamarin.forms\5.0.0.2622\lib\uap10.0.16299\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>
-      <Modified>2023-08-10T08:12:20.000</Modified>
+      <Modified>2023-11-09T13:12:14.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\icon_add.png">
       <PackagePath>icon_add.png</PackagePath>
@@ -247,11 +271,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2023-12-25T17:17:27.977</Modified>
+      <Modified>2024-01-07T10:59:22.159</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2023-12-25T17:17:27.977</Modified>
+      <Modified>2024-01-07T10:59:22.159</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.22621.0\\redist\Debug\X64\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -267,11 +291,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-12-13T17:38:33.208</Modified>
+      <Modified>2024-01-05T19:59:05.267</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\Core\DataKlient.UWP.exe">
       <PackagePath>DataKlient.UWP.exe</PackagePath>
-      <Modified>2023-12-25T17:17:29.203</Modified>
+      <Modified>2024-01-07T10:59:24.117</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
