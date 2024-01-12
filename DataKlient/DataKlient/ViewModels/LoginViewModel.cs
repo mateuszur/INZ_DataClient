@@ -19,35 +19,33 @@ namespace DataKlient.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-       public Command LoginCommand { get; }
+
+        public Command LoginCommand { get; }
        
 
         private bool isCheckBoxChecked=false;
         private bool isPasswordEnabled=true;
 
         private Color serverStatusColor=Color.Red;
-        private readonly Timer _timer;
-
+        private  Timer _timer=null;
+        private Thread newThread=null;
        
 
         public LoginViewModel()
         {
-            
-            //if (CheckLocalSession())
-            //{
-            //    _ = Shell.Current.GoToAsync("//ItemsPage");
-            //}
-           
-             _timer = new Timer (CheckServerAvailability, null, 0, 1500 );
 
+            _timer = new Timer(CheckServerAvailability, null, 0, 1000);
+            
         }
 
         public async Task<bool> OnLoginClickedAsync(string username, string password)
         {
+            TcpClient _client = null;
+           
             try
             {
-                TcpClient client = new TcpClient("185.230.225.4", 3333);
-                NetworkStream stream = client.GetStream();
+                _client = new TcpClient("185.230.225.4", 3333);
+                NetworkStream stream = _client.GetStream();
 
                 //Obsługa rządania
                 byte[] dataUser = Encoding.ASCII.GetBytes("Login " + username + " " + password);
@@ -59,39 +57,41 @@ namespace DataKlient.ViewModels
 
                 int bytes = stream.Read(dataUser, 0, dataUser.Length);
                 string responseData = Encoding.ASCII.GetString(dataUser, 0, bytes);
-                string[] parts = responseData.Split(' ');
+                string[] parts = responseData.Split(',');
 
 
-                if (parts[0] == "LoginSuccessful" && (parts[4] == "1" || parts[4]=="2"))
+                if (parts[0] == "LoginSuccessful" && (parts[3] == "1" || parts[3]=="2"))
                 {
 
-                    _ = Shell.Current.GoToAsync("//ItemsPage");
+               
                     
                     SessionLocalDetailsService _session= new SessionLocalDetailsService();
                     SessionLocalDetailsItem _newSession = new SessionLocalDetailsItem();
 
                     _newSession.sessionID = parts[1];
-                    _newSession.endSesionDate= DateTime.Parse(parts[2]);
+                    _newSession.endSesionDate = parts[2];
                     _newSession.privileges = parts[3];
                     _newSession.userLogin = parts[4];
-                    _newSession.userID= parts[5];
-                    _newSession.isValid = true;
+                    _newSession.userID= int.Parse(parts[5]);
+                    _newSession.isValid = 1;
 
                    await  _session.AddItem(_newSession);
 
-                    client.Close();
+                    _client.Close();
+                    _ = Shell.Current.GoToAsync("//ItemsPage");
                     return true;
 
                 }
                 else
                 {
-                    client.Close();
+                    _client.Close();
                     return false;
                 }
 
             }
             catch (Exception ex)
             {
+                _client?.Close();
                 return false;
                 //Przestrzeń na zrobienie zapisu błedu w pliku z logami
                 Console.WriteLine(ex.ToString() + "\n");
@@ -165,7 +165,7 @@ namespace DataKlient.ViewModels
             }
         }
 
-        private void CheckServerAvailability(object state)
+        public void CheckServerAvailability(object state)
         {
             // Logika sprawdzająca dostępność serwera
            Task<bool> temp = CheckServerAsync();
@@ -222,19 +222,20 @@ namespace DataKlient.ViewModels
 
 
         //Metody sprawdzajace czy są loklane sesje- sesja na serwerze 24h
-        private async Task<bool> CheckLocalSessionAsync()
+        public async Task<bool> CheckLocalSessionAsync()
         {
+          
+            TcpClient _client= null;
             try {
-                SessionLocalDetailsService _session = new SessionLocalDetailsService();
-                SessionLocalDetailsItem _activSession = new SessionLocalDetailsItem();
+                SessionLocalDetailsService _activeSession = new SessionLocalDetailsService();
+                var _Session = await _activeSession.GetItems();
 
-                _activSession = await _session.GetItems();
-                if (_activSession != null)
+                if (_Session!= null && _Session.Count != 0)
                 {
-                    TcpClient client = new TcpClient("185.230.225.4", 3333);
-                    NetworkStream stream = client.GetStream();
+                    _client = new TcpClient("185.230.225.4", 3333);
+                    NetworkStream stream = _client.GetStream();
 
-                    byte[] dataSessio = Encoding.ASCII.GetBytes("IsSessionValid " + _activSession.sessionID + " " + _activSession.userID);
+                    byte[] dataSessio = Encoding.ASCII.GetBytes("IsSessionValid " + _Session[0].sessionID + " " + _Session[0].userID);
                     stream.Write(dataSessio, 0, dataSessio.Length);
                     await Task.Delay(1000);
 
@@ -247,36 +248,52 @@ namespace DataKlient.ViewModels
 
                     if (responseData == "Sesion is valid")
                     {
+                        _ = Shell.Current.GoToAsync("//ItemsPage");
+                        _client.Close();
                         return true;
                     }else
                     {
+                        SessionLocalDetailsService _session = new SessionLocalDetailsService();
+                        SessionLocalDetailsItem _newSession = _Session[0];
+
+                        _newSession.isValid = 0;
+
+                        await _session.UpdateSelectedItem(_newSession);
+
+                        _client.Close();
                         return false;
                     }
 
 
                 }
-                else { return false; }
+                else {
+                    _client?.Close();    
+                    return false; 
+                }
 
             }
             catch (Exception e)
             {
+                _client?.Close();
                 return false;
             }
         }
 
 
-        private bool CheckLocalSession()
-        {
-            // Logika sprawdzająca dostępność serwera
-            Task<bool> temp = CheckLocalSessionAsync();
-            bool isSessionValid = temp.Result;
-            if (isSessionValid)
-            {
-                return true;
-            }else
-            { return false; }    
+        //public bool CheckLocalSession()
+        //{
+        //    // Logika sprawdzająca dostępność serwera
+        //    Task<bool> temp =  CheckLocalSessionAsync();
+        //    bool isSessionValid = temp.Result;
+        //    if (isSessionValid)
+        //    {
+        //        _ = Shell.Current.GoToAsync("//ItemsPage");
+        //         return true;
+        //    }
+        //    else
+        //    { return false; }    
            
-        }
+        //}
 
 
     }

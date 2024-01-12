@@ -6,6 +6,6 @@
     "\\DataKlient\\DataKlient",
     "\\DataKlient\\DataKlient\\ViewModels"
   ],
-  "SelectedNode": "\\DataKlient\\DataKlient\\ViewModels\\LoginViewModel.cs",
+  "SelectedNode": "\\DataKlient\\DataKlient\\ViewModels\\ItemsViewModel.cs",
   "PreviewInSolutionExplorer": false
 }

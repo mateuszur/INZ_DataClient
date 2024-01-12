@@ -14,20 +14,20 @@ namespace DataKlient.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {
-        private Item _selectedItem;
+        private FileItem _selectedItem;
 
-        public ObservableCollection<Item> Items { get; }
+        public ObservableCollection<FileItem> Items { get; }
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
-        public Command<Item> ItemTapped { get; }
+        public Command<FileItem> ItemTapped { get; }
 
         public ItemsViewModel()
         {
             Title = "Pliki";
-            Items = new ObservableCollection<Item>();
+            Items = new ObservableCollection<FileItem>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            ItemTapped = new Command<Item>(OnItemSelected);
+            ItemTapped = new Command<FileItem>(OnItemSelected);
 
             AddItemCommand = new Command(OnAddItem);
         }
@@ -40,9 +40,16 @@ namespace DataKlient.ViewModels
             {
                 Items.Clear();
                 var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
+                if (items != null)
                 {
-                    Items.Add(item);
+                    foreach (var item in items)
+                    {
+                        Items.Add(item);
+                    }
+                }
+                else
+                {
+                    return;
                 }
             }
             catch (Exception ex)
@@ -61,7 +68,7 @@ namespace DataKlient.ViewModels
             SelectedItem = null;
         }
 
-        public Item SelectedItem
+        public FileItem SelectedItem
         {
             get => _selectedItem;
             set
@@ -134,7 +141,7 @@ namespace DataKlient.ViewModels
             }
         }
 
-        async void OnItemSelected(Item item)
+        async void OnItemSelected(FileItem item)
         {
             if (item == null)
                 return;

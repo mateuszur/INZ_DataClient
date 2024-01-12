@@ -54,10 +54,6 @@
             "Xamarin.Forms": {
               "target": "Package",
               "version": "[5.0.0.2622, )"
-            },
-            "sqlite-net-pcl": {
-              "target": "Package",
-              "version": "[1.8.116, )"
             }
           },
           "imports": [
@@ -138,6 +134,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "PropertyChanged.Fody": {
+              "target": "Package",
+              "version": "[4.1.0, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

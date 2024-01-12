@@ -44,3 +44,5 @@ C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\obj\Debug
 C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\obj\Debug\netstandard2.0\DataKlient.dll
 C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\obj\Debug\netstandard2.0\refint\DataKlient.dll
 C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\obj\Debug\netstandard2.0\DataKlient.pdb
+C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\obj\Debug\netstandard2.0\DataKlient.csproj.Fody.CopyLocal.cache
+C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\obj\Debug\netstandard2.0\DataKlient.csproj.Fody.RuntimeCopyLocal.cache

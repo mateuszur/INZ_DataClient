@@ -28,6 +28,9 @@
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\DataKlient.UWP.exe">
       <PackagePath>entrypoint\DataKlient.UWP.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\propertychanged.fody\4.1.0\lib\netstandard2.0\PropertyChanged.dll">
+      <PackagePath>PropertyChanged.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x64.microsoft.netcore.universalwindowsplatform\6.2.14\runtimes\win10-x64\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
     </AppxPackagedFile>

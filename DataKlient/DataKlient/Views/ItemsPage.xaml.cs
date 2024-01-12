@@ -14,13 +14,14 @@ namespace DataKlient.Views
 {
     public partial class ItemsPage : ContentPage
     {
-        ItemsViewModel _viewModel;
+        ItemsViewModel _viewModel= new ItemsViewModel();
 
         public ItemsPage()
         {
             InitializeComponent();
 
-            BindingContext = _viewModel = new ItemsViewModel();
+            //BindingContext = _viewModel = new ItemsViewModel();
+            BindingContext = _viewModel ;
         }
 
         protected override void OnAppearing()

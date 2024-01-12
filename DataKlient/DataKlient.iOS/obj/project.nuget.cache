@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "IBmuI0aAXD6DGLziY7eAoEbArIhdVH7Bn/UwjN+Bwjz/fywvyDz+SMHOgmfcfrVT9iLmNAjPNp2t7G9nIoEP2A==",
+  "dgSpecHash": "VLkVnaM7/KTIVz/ZbLqE6gazXLl5B4IfiFjRRSOA4CGSG/afvAcdLw9UJ+omQwE3+9LBVVvNXoV4+Sf6T5bKdQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\DataKlient.iOS.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\matik\\.nuget\\packages\\fody\\6.6.4\\fody.6.6.4.nupkg.sha512",
+    "C:\\Users\\matik\\.nuget\\packages\\propertychanged.fody\\4.1.0\\propertychanged.fody.4.1.0.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\sqlite-net-pcl\\1.8.116\\sqlite-net-pcl.1.8.116.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.4\\sqlitepclraw.bundle_green.2.0.4.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",

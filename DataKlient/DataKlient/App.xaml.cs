@@ -14,7 +14,7 @@ namespace DataKlient
         {
             InitializeComponent();
       
-           DependencyService.Register<MockDataStore>();
+           DependencyService.Register<DataStore>();
            
            MainPage = new AppShell();
 

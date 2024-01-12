@@ -48,12 +48,12 @@
                                 <SwipeItem Text="Opcja 2" IconImageSource="icon2.png" BackgroundColor="Red" Command="{Binding Source={RelativeSource AncestorType={x:Type local:ItemsViewModel}}, Path=Option2Command}" />
                             </SwipeItems>
                         </SwipeView.RightItems>
-                        <StackLayout Padding="10" x:DataType="model:Item">
-                            <Label Text="{Binding Text}" 
+                        <StackLayout Padding="10" x:DataType="model:FileItem">
+                            <Label Text="{Binding FileName}" 
                 LineBreakMode="NoWrap" 
                 Style="{DynamicResource ListItemTextStyle}" 
                 FontSize="16" />
-                            <Label Text="{Binding Description}" 
+                            <Label Text="{Binding FileType}" 
                 LineBreakMode="NoWrap"
                 Style="{DynamicResource ListItemDetailTextStyle}"
                 FontSize="13" />

@@ -49,11 +49,11 @@ namespace DataKlient.ViewModels
 
         private async void OnSave()
         {
-            Item newItem = new Item()
+            FileItem newItem = new FileItem()
             {
-                Id = Guid.NewGuid().ToString(),
-                Text = Text,
-                Description = Description
+               // Id = int.Parse(Guid.NewGuid()),
+                FileName = Text,
+                FileType = Description
             };
 
             await DataStore.AddItemAsync(newItem);
