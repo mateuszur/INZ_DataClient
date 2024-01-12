@@ -4,8 +4,9 @@
     "\\Client",
     "\\DataKlient",
     "\\DataKlient\\DataKlient",
+    "\\DataKlient\\DataKlient\\Services",
     "\\DataKlient\\DataKlient\\ViewModels"
   ],
-  "SelectedNode": "\\DataKlient\\DataKlient\\ViewModels\\ItemsViewModel.cs",
+  "SelectedNode": "\\DataKlient\\DataKlient\\Services\\SessionLocalDetailsService.cs",
   "PreviewInSolutionExplorer": false
 }
