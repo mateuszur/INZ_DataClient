@@ -13,9 +13,9 @@ namespace DataKlient.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
-       //inicjalizacja widoku logowania
+       //inicjalizacja modelu logowania
        private LoginViewModel viewModel = new LoginViewModel();
-       private ItemsViewModel itemDetailViewModel = new ItemsViewModel();
+     
        private string _usernaem;
        private string _password;
 
@@ -24,16 +24,10 @@ namespace DataKlient.Views
 
         public LoginPage()
         {
-            //Thread newThread = new Thread(CheckLocalSessionAsync);
 
             InitializeComponent();
-          
              CheckLocalSessionAsync();
-           
-
             this.BindingContext = viewModel;
-           
-
 
         }
 

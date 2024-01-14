@@ -14,12 +14,15 @@ namespace DataKlient.Views
 {
     public partial class ItemsPage : ContentPage
     {
-        ItemsViewModel _viewModel= new ItemsViewModel();
+         ItemsViewModel _viewModel= new ItemsViewModel();
+    
+
+        private string _item;
 
         public ItemsPage()
         {
             InitializeComponent();
-
+       
             //BindingContext = _viewModel = new ItemsViewModel();
             BindingContext = _viewModel ;
         }
@@ -29,5 +32,9 @@ namespace DataKlient.Views
             base.OnAppearing();
             _viewModel.OnAppearing();
         }
+
+      
+
+
     }
 }

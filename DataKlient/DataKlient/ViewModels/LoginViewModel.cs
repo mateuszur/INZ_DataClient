@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
+
 namespace DataKlient.ViewModels
 {
     public class LoginViewModel : BaseViewModel
@@ -28,15 +29,19 @@ namespace DataKlient.ViewModels
 
         private Color serverStatusColor=Color.Red;
         private  Timer _timer=null;
-        private Thread newThread=null;
-       
+     
+        private string __sessionID;
+        private int __userID;
 
+      
         public LoginViewModel()
         {
 
             _timer = new Timer(CheckServerAvailability, null, 0, 1000);
             
         }
+
+
 
         public async Task<bool> OnLoginClickedAsync(string username, string password)
         {
@@ -62,9 +67,6 @@ namespace DataKlient.ViewModels
 
                 if (parts[0] == "LoginSuccessful" && (parts[3] == "1" || parts[3]=="2"))
                 {
-
-               
-                    
                     SessionLocalDetailsService _session= new SessionLocalDetailsService();
                     SessionLocalDetailsItem _newSession = new SessionLocalDetailsItem();
 
@@ -78,6 +80,7 @@ namespace DataKlient.ViewModels
                    await  _session.AddItem(_newSession);
 
                     _client.Close();
+
                     _ = Shell.Current.GoToAsync("//ItemsPage");
                     return true;
 
@@ -248,6 +251,7 @@ namespace DataKlient.ViewModels
 
                     if (responseData == "Sesion is valid")
                     {
+
                         _ = Shell.Current.GoToAsync("//ItemsPage");
                         _client.Close();
                         return true;
@@ -272,9 +276,11 @@ namespace DataKlient.ViewModels
                 }
 
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
                 _client?.Close();
+                //Przestrzeń na zrobienie zapisu błedu w pliku z logami
+                Console.WriteLine(ex.ToString() + "\n");
                 return false;
             }
         }

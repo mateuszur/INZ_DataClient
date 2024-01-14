@@ -40,7 +40,7 @@ namespace DataKlient.Services
             {
                 await CreateConnection();
                 var items = await connection.Table<SessionLocalDetailsItem>()
-                             .Where(x => x.isValid == 1)
+                             .Where(x => x.isValid == 1 )
                              .ToListAsync();
 
                 return items;

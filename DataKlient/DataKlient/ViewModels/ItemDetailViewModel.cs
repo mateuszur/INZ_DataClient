@@ -43,9 +43,9 @@ namespace DataKlient.ViewModels
         {
             try
             {
-                var item = await DataStore.GetItemAsync(itemId);
-                Id = item.FileName;
-                Text = item.FileSize;
+                var item = await DataStore.GetItemByIdAsync(itemId);
+                Id = item.Id.ToString();
+                Text = item.FileName;
                 Description = item.FileType;
             }
             catch (Exception)

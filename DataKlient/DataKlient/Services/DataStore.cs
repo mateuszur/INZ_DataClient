@@ -11,6 +11,7 @@ namespace DataKlient.Services
     public class DataStore : IDataStore<FileItem>
     {
         private SQLiteAsyncConnection connection;
+        public event EventHandler<FileItem> OnFileAdded;
 
 
         readonly List<FileItem> items;
@@ -45,13 +46,28 @@ namespace DataKlient.Services
             await connection.CreateTableAsync<FileItem>();
         }
 
-
-
-            public async Task<bool> AddItemAsync(FileItem item)
+        public async Task DeleteDatabaseAsync()
         {
-            items.Add(item);
+            await CreateConnection();
+            await connection.DeleteAllAsync<FileItem>();
+        }
 
-            return await Task.FromResult(true);
+        //    public async Task<bool> AddItemAsync(FileItem item)
+        //{
+        //    await CreateConnection();
+        //    await connection.InsertAsync(item);
+        //    OnFileAdded?.Invoke(this, item);
+
+        //    return await Task.FromResult(true);
+        //}
+
+        public async Task AddItemAsync(FileItem item)
+        {
+            await CreateConnection();
+            await connection.InsertAsync(item);
+            OnFileAdded?.Invoke(this, item);
+
+       
         }
 
         public async Task<bool> UpdateItemAsync(FileItem item)
@@ -71,12 +87,12 @@ namespace DataKlient.Services
             return await Task.FromResult(true);
         }
 
-        public async Task<FileItem> GetItemAsync(int id)
+        public async Task<FileItem> GetItemAsyncByUser(int userID)
         {
             try
             {
                 await CreateConnection();
-                return await connection.Table<FileItem>().Where(x => x.UserID == id).FirstOrDefaultAsync();
+                return await connection.Table<FileItem>().Where(x => x.UserID == userID).FirstOrDefaultAsync();
                 // return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
 
             }
@@ -88,9 +104,28 @@ namespace DataKlient.Services
             
         }
 
+        public async Task<FileItem> GetItemByIdAsync(int id)
+        {
+            try
+            {
+                await CreateConnection();
+                return await connection.Table<FileItem>().Where(x => x.Id == id).FirstOrDefaultAsync();
+                // return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+
+        }
+
         public async Task<IEnumerable<FileItem>> GetItemsAsync(bool forceRefresh = false)
         {
-            return await Task.FromResult(items);
+            await CreateConnection();
+            return await connection.Table<FileItem>().ToArrayAsync();
+           // return await Task.FromResult(items);
         }
     }
 }
