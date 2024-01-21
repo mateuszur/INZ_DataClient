@@ -145,7 +145,7 @@ namespace DataKlient.ViewModels
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:
-                    OnAddItem_IOS();
+                return    OnAddItem_IOS();
                     break;
 
                 case Device.UWP:
