@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>47FF6CB06ABF94FC269EA16F0C38B816F4B4E8F2EC468A15EB0E459397FF79FD</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>7358BCEB320797C89F5F669FFA8B6DC0624CEEEC011EE5D1C7D2DC9173C62017</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>7CF95908-CB87-4409-AFAB-189B61EA4FE2_1.0.0.0_x64__8p2zh3aavff8j</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>7CF95908-CB87-4409-AFAB-189B61EA4FE2_8p2zh3aavff8j!App</RegisteredUserModeAppID>
     <RegisteredPackageID>7CF95908-CB87-4409-AFAB-189B61EA4FE2</RegisteredPackageID>
@@ -30,13 +30,21 @@
     <AppXManifest Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-01-14T00:19:08.412</Modified>
+      <Modified>2024-01-21T23:31:27.608</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\DataKlient.UWP.exe">
       <PackagePath>entrypoint\DataKlient.UWP.exe</PackagePath>
-      <Modified>2024-01-14T00:19:07.317</Modified>
+      <Modified>2024-01-21T23:23:09.454</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\fluentftp\49.0.1\lib\netstandard2.0\FluentFTP.dll">
+      <PackagePath>FluentFTP.dll</PackagePath>
+      <Modified>2023-12-27T07:35:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\fluentftp.gnutls\1.0.29\lib\netstandard2.0\FluentFTP.GnuTLS.dll">
+      <PackagePath>FluentFTP.GnuTLS.dll</PackagePath>
+      <Modified>2023-12-25T19:54:12.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\propertychanged.fody\4.1.0\lib\netstandard2.0\PropertyChanged.dll">
       <PackagePath>PropertyChanged.dll</PackagePath>
@@ -96,7 +104,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\bin\Debug\netstandard2.0\DataKlient.dll">
       <PackagePath>DataKlient.dll</PackagePath>
-      <Modified>2024-01-14T00:19:02.072</Modified>
+      <Modified>2024-01-21T23:31:21.089</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\bin\Debug\netstandard2.0\Xamarin.iOS.dll">
       <PackagePath>Xamarin.iOS.dll</PackagePath>
@@ -109,6 +117,30 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.22621.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
       <Modified>2023-05-11T21:54:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\fluentftp.gnutls\1.0.29\content\libgcc_s_seh-1.dll">
+      <PackagePath>libgcc_s_seh-1.dll</PackagePath>
+      <Modified>2023-12-23T18:55:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\fluentftp.gnutls\1.0.29\content\libgmp-10.dll">
+      <PackagePath>libgmp-10.dll</PackagePath>
+      <Modified>2023-12-23T18:55:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\fluentftp.gnutls\1.0.29\content\libgnutls-30.dll">
+      <PackagePath>libgnutls-30.dll</PackagePath>
+      <Modified>2023-12-23T18:55:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\fluentftp.gnutls\1.0.29\content\libhogweed-6.dll">
+      <PackagePath>libhogweed-6.dll</PackagePath>
+      <Modified>2023-12-23T18:55:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\fluentftp.gnutls\1.0.29\content\libnettle-8.dll">
+      <PackagePath>libnettle-8.dll</PackagePath>
+      <Modified>2023-12-23T18:55:16.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\fluentftp.gnutls\1.0.29\content\libwinpthread-1.dll">
+      <PackagePath>libwinpthread-1.dll</PackagePath>
+      <Modified>2023-12-23T18:55:16.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\xamarin.forms\5.0.0.2622\lib\uap10.0.16299\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>
@@ -275,11 +307,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2024-01-14T00:19:07.238</Modified>
+      <Modified>2024-01-21T23:31:26.393</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2024-01-14T00:19:07.238</Modified>
+      <Modified>2024-01-21T23:31:26.393</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.22621.0\\redist\Debug\X64\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -295,11 +327,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-01-09T16:08:15.070</Modified>
+      <Modified>2024-01-21T20:30:32.981</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\Core\DataKlient.UWP.exe">
       <PackagePath>DataKlient.UWP.exe</PackagePath>
-      <Modified>2024-01-14T00:19:08.406</Modified>
+      <Modified>2024-01-21T23:31:27.602</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "6wOLtQvhvIQglzzPAG1lVklo6JN9yQy1arOq4L6Zqr07ve6t1BZaoMkR+VMZ7GCKNBUZx7l5upOi95UxEYjMHw==",
+  "dgSpecHash": "mOx20WVi4NG1U/tv0yvsBltl2wkcWtbHUE24ddoMc+LcSUjtn46sjFwZ1lY/sukyFdapSF65BivwvXGF6ilq+Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.UWP\\DataKlient.UWP.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\matik\\.nuget\\packages\\fluentftp\\49.0.1\\fluentftp.49.0.1.nupkg.sha512",
+    "C:\\Users\\matik\\.nuget\\packages\\fluentftp.gnutls\\1.0.29\\fluentftp.gnutls.1.0.29.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\fody\\6.6.4\\fody.6.6.4.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.net.native.compiler\\2.2.12-rel-31116-00\\microsoft.net.native.compiler.2.2.12-rel-31116-00.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.net.uwpcoreruntimesdk\\2.2.14\\microsoft.net.uwpcoreruntimesdk.2.2.14.nupkg.sha512",

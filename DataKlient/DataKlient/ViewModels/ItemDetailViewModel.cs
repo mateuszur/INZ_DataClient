@@ -10,20 +10,38 @@ namespace DataKlient.ViewModels
     public class ItemDetailViewModel : BaseViewModel
     {
         private int itemId;
-        private string text;
-        private string description;
+        private string fileName;
+        private string fileExtension;
+        private string fileSize;
+        private string dateOfTransfer;
+
         public string Id { get; set; }
 
-        public string Text
+        public string FileName
         {
-            get => text;
-            set => SetProperty(ref text, value);
+            get => fileName;
+            set => SetProperty(ref fileName, value);
         }
 
-        public string Description
+        public string FileExtension
         {
-            get => description;
-            set => SetProperty(ref description, value);
+            get => fileExtension;
+            set => SetProperty(ref fileExtension, value);
+        }
+
+
+        public string FileSize
+        {
+            get => fileSize;
+            set => SetProperty(ref fileSize, value);
+        }
+
+        public string DateOfTransfer
+        {
+
+            get => dateOfTransfer;
+            
+            set=> SetProperty(ref dateOfTransfer, value);
         }
 
         public int ItemId
@@ -44,9 +62,15 @@ namespace DataKlient.ViewModels
             try
             {
                 var item = await DataStore.GetItemByIdAsync(itemId);
-                Id = item.Id.ToString();
-                Text = item.FileName;
-                Description = item.FileType;
+             
+                FileName = item.FileName;
+                FileExtension = item.FileType;
+                FileSize= item.FileSize;
+
+                string date = item.DateOfTransfer;
+                date = date.Insert(10, " ");
+
+                DateOfTransfer = date;
             }
             catch (Exception)
             {

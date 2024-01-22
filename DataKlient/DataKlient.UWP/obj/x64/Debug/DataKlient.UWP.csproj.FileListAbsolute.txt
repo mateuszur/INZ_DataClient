@@ -135,3 +135,11 @@ C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x
 C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
 C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\PropertyChanged.dll
+C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\FluentFTP.dll
+C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\libgcc_s_seh-1.dll
+C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\libgmp-10.dll
+C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\libgnutls-30.dll
+C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\libhogweed-6.dll
+C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\libnettle-8.dll
+C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\libwinpthread-1.dll
+C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\FluentFTP.GnuTLS.dll

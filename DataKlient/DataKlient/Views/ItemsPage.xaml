@@ -8,7 +8,8 @@
              x:Name="BrowseItemsPage">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="icon_add.png"  Text="Dodaj" Command="{Binding AddItemCommand}" />
+        <!--<ToolbarItem IconImageSource="icon_add.png"  Text="Dodaj" Command="{Binding AddItemCommand}" />-->
+        <ToolbarItem IconImageSource="icon_add.png"  Text="Dodaj" Clicked="Button_AddItem_Async" />
     </ContentPage.ToolbarItems>
     <!--
       x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.

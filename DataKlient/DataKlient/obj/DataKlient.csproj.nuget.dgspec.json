@@ -46,6 +46,14 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "FluentFTP": {
+              "target": "Package",
+              "version": "[49.0.1, )"
+            },
+            "FluentFTP.GnuTLS": {
+              "target": "Package",
+              "version": "[1.0.29, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "YWFwTcTZBbWp0YkAaQErkTSZNmBmrt7qZpbA/HhQvZDvf7P/O/mOmHgagiPvyUp9pbo3TymipohqHy0iZNPl+Q==",
+  "dgSpecHash": "1qBPS25NrYCI0wkJR+e1MT3hNBHuSfC26lsbcGED/Nj7fLiGyOmPFDq2++a0LhJFo1Lh8ctPMs94oM1lNHJDEg==",
   "success": true,
   "projectFilePath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\matik\\.nuget\\packages\\fluentftp\\49.0.1\\fluentftp.49.0.1.nupkg.sha512",
+    "C:\\Users\\matik\\.nuget\\packages\\fluentftp.gnutls\\1.0.29\\fluentftp.gnutls.1.0.29.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\fody\\6.6.4\\fody.6.6.4.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

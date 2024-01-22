@@ -28,6 +28,12 @@
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\DataKlient.UWP.exe">
       <PackagePath>entrypoint\DataKlient.UWP.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\fluentftp\49.0.1\lib\netstandard2.0\FluentFTP.dll">
+      <PackagePath>FluentFTP.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\fluentftp.gnutls\1.0.29\lib\netstandard2.0\FluentFTP.GnuTLS.dll">
+      <PackagePath>FluentFTP.GnuTLS.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\propertychanged.fody\4.1.0\lib\netstandard2.0\PropertyChanged.dll">
       <PackagePath>PropertyChanged.dll</PackagePath>
     </AppxPackagedFile>
@@ -81,6 +87,24 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.22621.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\fluentftp.gnutls\1.0.29\content\libgcc_s_seh-1.dll">
+      <PackagePath>libgcc_s_seh-1.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\fluentftp.gnutls\1.0.29\content\libgmp-10.dll">
+      <PackagePath>libgmp-10.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\fluentftp.gnutls\1.0.29\content\libgnutls-30.dll">
+      <PackagePath>libgnutls-30.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\fluentftp.gnutls\1.0.29\content\libhogweed-6.dll">
+      <PackagePath>libhogweed-6.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\fluentftp.gnutls\1.0.29\content\libnettle-8.dll">
+      <PackagePath>libnettle-8.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\fluentftp.gnutls\1.0.29\content\libwinpthread-1.dll">
+      <PackagePath>libwinpthread-1.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\xamarin.forms\5.0.0.2622\lib\uap10.0.16299\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>

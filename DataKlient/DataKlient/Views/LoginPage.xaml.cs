@@ -26,15 +26,15 @@ namespace DataKlient.Views
         {
 
             InitializeComponent();
-             CheckLocalSessionAsync();
+            CheckLocalSessionAsync();
             this.BindingContext = viewModel;
 
         }
 
         private async void Button_ClickedAsync(object sender, EventArgs e)
         {
-            _usernaem = "mateuszur"; //UserNameEntry.Text;
-            _password = "Pa$$w0rd";//PasswordEntry.Text;
+            _usernaem = UserNameEntry.Text;
+            _password = PasswordEntry.Text;
 
             bool result = await viewModel.OnLoginClickedAsync(_usernaem, _password);
 

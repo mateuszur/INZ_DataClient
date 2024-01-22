@@ -9,6 +9,8 @@
     ".NETStandard,Version=v2.0/": {
       "DataKlient/1.0.0": {
         "dependencies": {
+          "FluentFTP": "49.0.1",
+          "FluentFTP.GnuTLS": "1.0.29",
           "NETStandard.Library": "2.0.3",
           "PropertyChanged.Fody": "4.1.0",
           "Xamarin.Essentials": "1.8.1",
@@ -18,6 +20,25 @@
         },
         "runtime": {
           "DataKlient.dll": {}
+        }
+      },
+      "FluentFTP/49.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/FluentFTP.dll": {
+            "assemblyVersion": "49.0.1.0",
+            "fileVersion": "49.0.1.0"
+          }
+        }
+      },
+      "FluentFTP.GnuTLS/1.0.29": {
+        "dependencies": {
+          "FluentFTP": "49.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentFTP.GnuTLS.dll": {
+            "assemblyVersion": "1.0.29.0",
+            "fileVersion": "1.0.29.0"
+          }
         }
       },
       "Fody/6.6.4": {},
@@ -158,6 +179,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "FluentFTP/49.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-khqK+Z2R2dBePAOhJuLBjiU75MU7BMwgqWG8Br3YLPeX1oQ12T9t1RPHHl3pBKTq45q92mUQHUT3mF7Hlpvxgg==",
+      "path": "fluentftp/49.0.1",
+      "hashPath": "fluentftp.49.0.1.nupkg.sha512"
+    },
+    "FluentFTP.GnuTLS/1.0.29": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-t6I/SBMGB12UGmZPXw3KI+TlGS8UGGuV3XAdF01IPWCHcAOWSC/kp7H9CNgPIr36gjdxvaRYEOHKY1lpXDytyQ==",
+      "path": "fluentftp.gnutls/1.0.29",
+      "hashPath": "fluentftp.gnutls.1.0.29.nupkg.sha512"
     },
     "Fody/6.6.4": {
       "type": "package",

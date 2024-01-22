@@ -1,4 +1,10 @@
 WinMetadata\Windows.winmd
+libgcc_s_seh-1.dll
+libgmp-10.dll
+libgnutls-30.dll
+libhogweed-6.dll
+libnettle-8.dll
+libwinpthread-1.dll
 Assets\LargeTile.scale-100.png
 Assets\LargeTile.scale-200.png
 Assets\LargeTile.scale-400.png

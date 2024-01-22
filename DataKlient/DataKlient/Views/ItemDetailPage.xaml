@@ -5,10 +5,20 @@
              Title="{Binding Title}">
 
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Text}" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Description}" FontSize="Small"/>
+        <Label Text="Nazwa pliku:" FontSize="Medium" />
+        <Label Text="{Binding FileName}" FontSize="Small"/>
+        <Label Text="Rozszerzenie:" FontSize="Medium" />
+        <Label Text="{Binding FileExtension}" FontSize="Small"/>
+        <Label Text="Rozmiar pliku (MB):" FontSize="Small"/>
+        <Label Text="{Binding FileSize}" FontSize="Small"/>
+        <Label Text="Data przesłania:" FontSize="Small"/>
+        <Label Text="{Binding DateOfTransfer}" FontSize="Small"/>
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Pobierz" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" WidthRequest="170"  />
+            <Button Text="Usuń" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" WidthRequest="170" />
+        </StackLayout>
+
     </StackLayout>
     
 </ContentPage>

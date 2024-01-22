@@ -2,6 +2,38 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "FluentFTP/49.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/FluentFTP.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentFTP.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "FluentFTP.GnuTLS/1.0.29": {
+        "type": "package",
+        "dependencies": {
+          "FluentFTP": "48.0.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentFTP.GnuTLS.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentFTP.GnuTLS.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/FluentFTP.GnuTLS.targets": {}
+        }
+      },
       "Fody/6.6.4": {
         "type": "package",
         "build": {
@@ -269,6 +301,69 @@
     }
   },
   "libraries": {
+    "FluentFTP/49.0.1": {
+      "sha512": "khqK+Z2R2dBePAOhJuLBjiU75MU7BMwgqWG8Br3YLPeX1oQ12T9t1RPHHl3pBKTq45q92mUQHUT3mF7Hlpvxgg==",
+      "type": "package",
+      "path": "fluentftp/49.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "fluentftp.49.0.1.nupkg.sha512",
+        "fluentftp.nuspec",
+        "lib/net462/FluentFTP.dll",
+        "lib/net462/FluentFTP.xml",
+        "lib/net472/FluentFTP.dll",
+        "lib/net472/FluentFTP.xml",
+        "lib/net5.0/FluentFTP.dll",
+        "lib/net5.0/FluentFTP.xml",
+        "lib/net6.0/FluentFTP.dll",
+        "lib/net6.0/FluentFTP.xml",
+        "lib/netstandard2.0/FluentFTP.dll",
+        "lib/netstandard2.0/FluentFTP.xml",
+        "lib/netstandard2.1/FluentFTP.dll",
+        "lib/netstandard2.1/FluentFTP.xml",
+        "logo-nuget.png"
+      ]
+    },
+    "FluentFTP.GnuTLS/1.0.29": {
+      "sha512": "t6I/SBMGB12UGmZPXw3KI+TlGS8UGGuV3XAdF01IPWCHcAOWSC/kp7H9CNgPIr36gjdxvaRYEOHKY1lpXDytyQ==",
+      "type": "package",
+      "path": "fluentftp.gnutls/1.0.29",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "build/FluentFTP.GnuTLS.targets",
+        "content/libgcc_s_seh-1.dll",
+        "content/libgmp-10.dll",
+        "content/libgnutls-30.dll",
+        "content/libhogweed-6.dll",
+        "content/libnettle-8.dll",
+        "content/libwinpthread-1.dll",
+        "contentFiles/libgcc_s_seh-1.dll",
+        "contentFiles/libgmp-10.dll",
+        "contentFiles/libgnutls-30.dll",
+        "contentFiles/libhogweed-6.dll",
+        "contentFiles/libnettle-8.dll",
+        "contentFiles/libwinpthread-1.dll",
+        "fluentftp.gnutls.1.0.29.nupkg.sha512",
+        "fluentftp.gnutls.nuspec",
+        "lib/net462/FluentFTP.GnuTLS.dll",
+        "lib/net462/FluentFTP.GnuTLS.xml",
+        "lib/net472/FluentFTP.GnuTLS.dll",
+        "lib/net472/FluentFTP.GnuTLS.xml",
+        "lib/net5.0/FluentFTP.GnuTLS.dll",
+        "lib/net5.0/FluentFTP.GnuTLS.xml",
+        "lib/net6.0/FluentFTP.GnuTLS.dll",
+        "lib/net6.0/FluentFTP.GnuTLS.xml",
+        "lib/netstandard2.0/FluentFTP.GnuTLS.dll",
+        "lib/netstandard2.0/FluentFTP.GnuTLS.xml",
+        "lib/netstandard2.1/FluentFTP.GnuTLS.dll",
+        "lib/netstandard2.1/FluentFTP.GnuTLS.xml",
+        "logo-nuget.png"
+      ]
+    },
     "Fody/6.6.4": {
       "sha512": "vLZS+oa+ndUHYPlx/8n9bBTT3dHkCF0riml4paKq4D663+cZd47x1uagQo32D/gKFZ/sfmV1oqKaLmH0elxq4A==",
       "type": "package",
@@ -936,6 +1031,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "FluentFTP >= 49.0.1",
+      "FluentFTP.GnuTLS >= 1.0.29",
       "NETStandard.Library >= 2.0.3",
       "PropertyChanged.Fody >= 4.1.0",
       "Xamarin.Essentials >= 1.8.1",
@@ -990,6 +1087,14 @@
       "netstandard2.0": {
         "targetAlias": "netstandard2.0",
         "dependencies": {
+          "FluentFTP": {
+            "target": "Package",
+            "version": "[49.0.1, )"
+          },
+          "FluentFTP.GnuTLS": {
+            "target": "Package",
+            "version": "[1.0.29, )"
+          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",
