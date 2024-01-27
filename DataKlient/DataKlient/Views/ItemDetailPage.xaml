@@ -14,9 +14,11 @@
         <Label Text="Data przesłania:" FontSize="Small"/>
         <Label Text="{Binding DateOfTransfer}" FontSize="Small"/>
 
-        <StackLayout Orientation="Horizontal">
-            <Button Text="Pobierz" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" WidthRequest="170"  />
+        <StackLayout Orientation="Vertical">
+            <Button Text="Pobierz" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" WidthRequest="170" Clicked="DownloadButton"  />
             <Button Text="Usuń" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" WidthRequest="170" />
+            <Button  Text="Otwórz" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" WidthRequest="170" Clicked="OpenButton" IsEnabled="{Binding IsFileLocal}" />
+            
         </StackLayout>
 
     </StackLayout>

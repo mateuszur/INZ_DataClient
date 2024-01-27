@@ -50,16 +50,9 @@ namespace DataKlient.Services
         {
             await CreateConnection();
             await connection.DeleteAllAsync<FileItem>();
+            await connection.ExecuteAsync("UPDATE sqlite_sequence SET seq = 1 WHERE name = 'FileItem'");
         }
 
-        //    public async Task<bool> AddItemAsync(FileItem item)
-        //{
-        //    await CreateConnection();
-        //    await connection.InsertAsync(item);
-        //    OnFileAdded?.Invoke(this, item);
-
-        //    return await Task.FromResult(true);
-        //}
 
         public async Task AddItemAsync(FileItem item)
         {

@@ -82,6 +82,7 @@ namespace DataKlient.ViewModels
                     _client.Close();
 
                     _ = Shell.Current.GoToAsync("//ItemsPage");
+                    _timer.Dispose();
                     return true;
 
                 }
@@ -253,6 +254,7 @@ namespace DataKlient.ViewModels
                     {
 
                         _ = Shell.Current.GoToAsync("//ItemsPage");
+                        _timer.Dispose();
                         _client.Close();
                         return true;
                     }else
@@ -286,20 +288,6 @@ namespace DataKlient.ViewModels
         }
 
 
-        //public bool CheckLocalSession()
-        //{
-        //    // Logika sprawdzająca dostępność serwera
-        //    Task<bool> temp =  CheckLocalSessionAsync();
-        //    bool isSessionValid = temp.Result;
-        //    if (isSessionValid)
-        //    {
-        //        _ = Shell.Current.GoToAsync("//ItemsPage");
-        //         return true;
-        //    }
-        //    else
-        //    { return false; }    
-           
-        //}
 
 
     }

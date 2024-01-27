@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\DataKlient.iOS.csproj": {}
+    "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\DataKlient.iOS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\DataKlient.iOS.csproj": {
+    "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\DataKlient.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\DataKlient.iOS.csproj",
+        "projectUniqueName": "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\DataKlient.iOS.csproj",
         "projectName": "DataKlient.iOS",
-        "projectPath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\DataKlient.iOS.csproj",
+        "projectPath": "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\DataKlient.iOS.csproj",
         "packagesPath": "C:\\Users\\matik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\obj\\",
+        "outputPath": "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj": {
-                "projectPath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj"
+              "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj": {
+                "projectPath": "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj"
               }
             }
           }
@@ -76,14 +76,14 @@
         }
       }
     },
-    "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj": {
+    "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj",
+        "projectUniqueName": "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj",
         "projectName": "DataKlient",
-        "projectPath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj",
+        "projectPath": "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj",
         "packagesPath": "C:\\Users\\matik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\obj\\",
+        "outputPath": "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

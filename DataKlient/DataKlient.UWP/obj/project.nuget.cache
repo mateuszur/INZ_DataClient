@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mOx20WVi4NG1U/tv0yvsBltl2wkcWtbHUE24ddoMc+LcSUjtn46sjFwZ1lY/sukyFdapSF65BivwvXGF6ilq+Q==",
+  "dgSpecHash": "Kv858Gpp73X7jgpAZUlcZmteSleoil3eaYtnULCzj5YaRvyzK7LLoQqGP/obH7olbHd9t280V5ciJ/KDtywCDQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.UWP\\DataKlient.UWP.csproj",
+  "projectFilePath": "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.UWP\\DataKlient.UWP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\matik\\.nuget\\packages\\fluentftp\\49.0.1\\fluentftp.49.0.1.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\fluentftp.gnutls\\1.0.29\\fluentftp.gnutls.1.0.29.nupkg.sha512",
