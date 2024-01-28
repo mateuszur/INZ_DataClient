@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_CodesignBundle Include="DataKlient.iOS.app">
+      <CodesignSigningKey>A7FBCDDA23763D25223C345D4C6EE9EC8DD4FDD6</CodesignSigningKey>
+      <CodesignEntitlements>\Users\mateuszurbanczyk\Library\Caches\Xamarin\mtbs\builds\DataKlient.iOS\65fecdc197b0bc689adf4b4a8dfb2712e00c05f9fa5f33983a93bd9cd8193b5e\obj\iPhone\Release\Entitlements.xcent</CodesignEntitlements>
+      <CodesignUseSecureTimestamp></CodesignUseSecureTimestamp>
+      <CodesignAllocate>\Applications\Xcode.app\Contents\Developer\Toolchains\XcodeDefault.xctoolchain\usr\bin\codesign_allocate</CodesignAllocate>
+      <RequireCodeSigning>true</RequireCodeSigning>
+      <CodesignExtraArgs></CodesignExtraArgs>
+      <CodesignResourceRules></CodesignResourceRules>
+      <CodesignDisableTimestamp>false</CodesignDisableTimestamp>
+      <CodesignKeychain></CodesignKeychain>
+      <CodesignUseHardenedRuntime></CodesignUseHardenedRuntime>
+      <SourceProjectPath>C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.iOS</SourceProjectPath>
+    </_CodesignBundle>
+  </ItemGroup>
+</Project>

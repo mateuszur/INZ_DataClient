@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_PostProcessingItem Include="DataKlient.iOS.app/DataKlient.iOS">
+      <BCSymbolMapName>DataKlient.iOS.bcsymbolmap</BCSymbolMapName>
+      <NoDSymUtil>false</NoDSymUtil>
+      <dSYMSourcePathExists>false</dSYMSourcePathExists>
+      <NoSymbolStrip>false</NoSymbolStrip>
+      <dSYMInfoPlistRelativePath>DataKlient.iOS.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile>\Users\mateuszurbanczyk\Library\Caches\Xamarin\mtbs\builds\DataKlient.iOS\65fecdc197b0bc689adf4b4a8dfb2712e00c05f9fa5f33983a93bd9cd8193b5e\obj\iPhone\Release\mtouch-symbols.list</SymbolFile>
+      <DSymName>DataKlient.iOS.app.dSYM</DSymName>
+      <SourceProjectPath>C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.iOS</SourceProjectPath>
+    </_PostProcessingItem>
+  </ItemGroup>
+</Project>

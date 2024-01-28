@@ -1,4 +1,6 @@
 is_global = true
 build_property.PropertyChangedAnalyzerConfiguration = 
 build_property.RootNamespace = DataKlient
-build_property.ProjectDir = C:\Users\matik\source\repos\mateuszur\INZ_Client\DataKlient\DataKlient\
+build_property.ProjectDir = C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

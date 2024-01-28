@@ -52,3 +52,4 @@ C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\bin\Debug
 C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\bin\Debug\netstandard2.0\libhogweed-6.dll
 C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\bin\Debug\netstandard2.0\libnettle-8.dll
 C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\bin\Debug\netstandard2.0\libwinpthread-1.dll
+C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\obj\Debug\netstandard2.0\DataKlient.sourcelink.json

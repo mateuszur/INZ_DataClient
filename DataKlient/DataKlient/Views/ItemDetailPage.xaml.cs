@@ -29,7 +29,7 @@ namespace DataKlient.Views
 
         public async void OpenButton(object sender, EventArgs e)
         {
-            _viewModel.OpenFileClickedAsync();
+            _viewModel.OpenFileClicked();
         }
 
       
