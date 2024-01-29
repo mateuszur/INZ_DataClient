@@ -5,7 +5,8 @@
              Title="{Binding Title}"
              xmlns:local="clr-namespace:DataKlient.ViewModels"  
              xmlns:model="clr-namespace:DataKlient.Models"  
-             x:Name="BrowseItemsPage">
+             x:Name="BrowseItemsPage"
+             >
 
     <ContentPage.ToolbarItems>
         <!--<ToolbarItem IconImageSource="icon_add.png"  Text="Dodaj" Command="{Binding AddItemCommand}" />-->

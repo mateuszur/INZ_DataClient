@@ -72,12 +72,21 @@ namespace DataKlient.Services
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> DeleteItemAsync(int id)
+        public async Task DeleteItemAsync(int id)
         {
-            var oldItem = items.Where((FileItem arg) => arg.Id == id).FirstOrDefault();
-            items.Remove(oldItem);
+            await CreateConnection();
+            var oldItem = await connection.Table<FileItem>().Where( arg => arg.Id == id).FirstOrDefaultAsync(); 
+                
+            if (oldItem != null)
+            {
+                
+                await connection.DeleteAsync(oldItem);
+            }
 
-            return await Task.FromResult(true);
+
+            //items.Remove(oldItem);
+
+            //  return await Task.FromResult(true);
         }
 
         public async Task<FileItem> GetItemAsyncByUser(int userID)

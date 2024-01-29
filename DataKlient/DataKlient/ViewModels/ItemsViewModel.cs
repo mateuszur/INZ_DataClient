@@ -40,7 +40,7 @@ namespace DataKlient.ViewModels
         {
             Title = "Pliki";
             //tu zaczytanie z serwera
-            GetDataListFromServerAsync();
+          
 
             FileItems = new ObservableCollection<FileItem>();
         
@@ -50,6 +50,9 @@ namespace DataKlient.ViewModels
 
             //   AddItemCommand = new Command(OnAddItem);
         }
+
+   
+
 
         async Task ExecuteLoadItemsCommand()
         {
@@ -140,7 +143,7 @@ namespace DataKlient.ViewModels
             {
             
                 var filePath = Path.Combine(FileSystem.AppDataDirectory);
-               
+                filePath = filePath + "\\Download";
                 string new_filepath=await CoppyToAppDataDirectory(filePath);
                 
                 await UploadToServerAsync(new_filepath);
@@ -212,7 +215,7 @@ namespace DataKlient.ViewModels
 
         
 
-        private async Task GetDataListFromServerAsync()
+        public async Task GetDataListFromServerAsync()
         { 
 
                 TcpClient _client = null;
@@ -286,7 +289,8 @@ namespace DataKlient.ViewModels
         {
             try
             {
-              //  Windows.Storage.StorageFile storageFile = await Windows.Storage.StorageFile.GetFileFromPathAsync(filePath);
+                FileItem fileItem = new FileItem();
+                DataStore dataStore = new DataStore();
                 FileInfo fileInfo = new FileInfo(filePath);
                 long fileSizeInBytes = fileInfo.Length; // Rozmiar pliku w bajtach
                 int fileSizeInMB = (int)fileSizeInBytes / (1024 * 1024); // Rozmiar pliku w megabajtach
@@ -331,8 +335,16 @@ namespace DataKlient.ViewModels
                         await client.UploadFile(filePath, path);
                         await Task.Delay(1000);
                         await client.Disconnect();
-                    
 
+                    fileItem.FileName = fileName;
+                    fileItem.FileSize = fileSizeInMB.ToString();
+                    fileItem.FileType = extension;
+                    fileItem.UserID = _usedSession.userID;
+                    fileItem.DateOfTransfer = DateTime.Now.ToString("dd.MM.yyyyHH:mm:ss");
+
+
+                    await dataStore.AddItemAsync(fileItem);
+                    FileItems.Add(fileItem);
                 }
                 else
                 {
@@ -359,25 +371,33 @@ namespace DataKlient.ViewModels
                 
                 var stream = await result.OpenReadAsync();
 
-                string fileName = result.FileName;
+                string fileName = result.FileName.Replace(' ', '_');
+                
                 string fullPath = Path.Combine(filePath, fileName);
 
-                int count = 1;
-                while (System.IO.File.Exists(fullPath))
-                {
-                    string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(fileName);
-                    string extension = Path.GetExtension(fileName);
-                    fileName = $"{fileNameWithoutExtension}_{count}{extension}";
-                    fullPath = Path.Combine(filePath, fileName);
-                    count++;
-                }
+                //int count = 1;
+                //while (System.IO.File.Exists(fullPath))
+                //{
+                //    string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(fileName);
+                //    string extension = Path.GetExtension(fileName);
+                //    fileName = $"{fileNameWithoutExtension}_{count}{extension}";
+                //    fullPath = Path.Combine(filePath, fileName);
+                //    count++;
+                //}
 
+
+                if(System.IO.File.Exists(fullPath))
+                {
+                   
+                    System.IO.File.Delete(fullPath);
+                }
+               
                 using (var fileStream = System.IO.File.Create(fullPath))
                 {
                     stream.Seek(0, SeekOrigin.Begin);
                     stream.CopyTo(fileStream);
                 }
-
+             
                 return fullPath;
             }catch(Exception e)
             {

@@ -145,7 +145,8 @@ namespace DataKlient.ViewModels
             try
             {
                 await GetUsedSession();
-                _client = new TcpClient("185.230.225.4", 3333);
+               _client = new TcpClient("185.230.225.4", 3333);
+               
                 NetworkStream stream = _client.GetStream();
 
                 byte[] data = Encoding.ASCII.GetBytes("Download " + _usedSession.sessionID + " " + _usedSession.userID + " " + fileName);
@@ -267,6 +268,7 @@ namespace DataKlient.ViewModels
 
       public bool OnStartLocalFileChceck()
         {
+            //zmiany na macu
             if (File.Exists(localPath + "\\" + fileName))
             {
                 IsFileLocal= true;
@@ -297,7 +299,7 @@ namespace DataKlient.ViewModels
 
 
         public async Task OpenFileClicked()
-        {
+        {//zmian mac
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:
@@ -364,6 +366,54 @@ namespace DataKlient.ViewModels
                 default:
                     return null;
                     break;
+            }
+        }
+
+
+        public async Task DeleteButtonClickedAsync()
+        {
+            TcpClient _client = null;
+            try
+            {
+                await GetUsedSession();
+                _client = new TcpClient("185.230.225.4", 3333);
+                NetworkStream stream = _client.GetStream();
+
+                byte[] data = Encoding.ASCII.GetBytes("Delete " + _usedSession.sessionID + " " + _usedSession.userID + " " + fileName);
+                stream.Write(data, 0, data.Length);
+
+                await Task.Delay(1000);
+
+                data = new byte[256];
+                int bytes = stream.Read(data, 0, data.Length);
+                string responseData = Encoding.ASCII.GetString(data, 0, bytes);
+
+                _client.Close();
+
+                if (responseData.StartsWith("FileDeletedSuccessfully"))
+                {
+                    string filePath = localPath + "\\" + fileName;
+                    await DataStore.DeleteItemAsync(itemId);
+                    if (File.Exists(filePath))
+                    {
+                        File.Delete(filePath);
+                        _ = Shell.Current.GoToAsync("//ItemsPage");
+
+                    }
+                    else
+                    {
+                        _ = Shell.Current.GoToAsync("//ItemsPage");
+
+                    }
+                    
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                _client?.Close();
             }
         }
 

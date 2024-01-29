@@ -20,7 +20,7 @@ namespace DataKlient.Views
         public ItemsPage()
         {
             InitializeComponent();
-       
+            _viewModel.GetDataListFromServerAsync();
             //BindingContext = _viewModel = new ItemsViewModel();
             BindingContext = _viewModel ;
         }

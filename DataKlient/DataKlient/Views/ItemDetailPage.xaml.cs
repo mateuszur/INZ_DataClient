@@ -32,7 +32,10 @@ namespace DataKlient.Views
             _viewModel.OpenFileClicked();
         }
 
-      
+      public async void DeleteButton(object sender, EventArgs e)
+        {
+            _viewModel.DeleteButtonClickedAsync();
+        }
 
     }
 }
