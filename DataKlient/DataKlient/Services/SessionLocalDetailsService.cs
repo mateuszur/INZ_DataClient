@@ -12,9 +12,9 @@ namespace DataKlient.Services
     public class SessionLocalDetailsService : ISessionLocalDetailsService
     {
         private SQLiteAsyncConnection connection;
-        public event EventHandler<SessionLocalDetailsItem> OnSessionAdded;
-        public event EventHandler<SessionLocalDetailsItem> OnSessionUpdated;
-        public event EventHandler<SessionLocalDetailsItem> OnSessionGet;
+        public event EventHandler<Models.SessionLocalDetailsService> OnSessionAdded;
+        public event EventHandler<Models.SessionLocalDetailsService> OnSessionUpdated;
+        public event EventHandler<Models.SessionLocalDetailsService> OnSessionGet;
 
         private async Task CreateConnection()
         {
@@ -30,16 +30,16 @@ namespace DataKlient.Services
             var databasePath = Path.Combine(documentPath, "SessionDB.db");
 
             connection = new SQLiteAsyncConnection(databasePath);
-           await connection.CreateTableAsync<SessionLocalDetailsItem>();
+           await connection.CreateTableAsync<Models.SessionLocalDetailsService>();
 
         }
 
-        public async Task<List<SessionLocalDetailsItem>> GetItems()
+        public async Task<List<Models.SessionLocalDetailsService>> GetItems()
         {
             try
             {
                 await CreateConnection();
-                var items = await connection.Table<SessionLocalDetailsItem>()
+                var items = await connection.Table<Models.SessionLocalDetailsService>()
                              .Where(x => x.isValid == 1 )
                              .ToListAsync();
 
@@ -56,24 +56,24 @@ namespace DataKlient.Services
 
 
 
-        public async Task AddItem(SessionLocalDetailsItem item)
+        public async Task AddItem(Models.SessionLocalDetailsService item)
         {
             await CreateConnection();
             await connection.InsertAsync(item);
             OnSessionAdded?.Invoke(this, item);
         }
 
-        public async Task UpdateItem(SessionLocalDetailsItem item)
+        public async Task UpdateItem(Models.SessionLocalDetailsService item)
         {
             await CreateConnection();
             await connection.UpdateAsync(item);
             OnSessionUpdated?.Invoke(this, item);
         }
 
-        public async Task UpdateSelectedItem(SessionLocalDetailsItem item)
+        public async Task UpdateSelectedItem(Models.SessionLocalDetailsService item)
         {
             await CreateConnection();
-            var itemToEdit = await connection.Table<SessionLocalDetailsItem>()
+            var itemToEdit = await connection.Table<Models.SessionLocalDetailsService>()
                          .Where(x => x.sessionID == item.sessionID) // Zastąp "id" identyfikatorem rekordu, który chcesz edytować
                          .FirstOrDefaultAsync();
 

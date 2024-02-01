@@ -129,3 +129,5 @@ C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.iOS\obj\i
 C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Entitlements.plist.NoneOutput.stamp
 C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Info.plist.NoneOutput.stamp
 C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.iOS\obj\iPhoneSimulator\Debug\resourcestamps\DataKlient.stamp
+C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.iOS\bin\iPhoneSimulator\Debug\BouncyCastle.Crypto.dll
+C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\BouncyCastle.Crypto.dll.ReferenceCopyLocalPaths.stamp

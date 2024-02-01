@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "9uHCgNt0MupDQEHf68oE1jOcU22nycqtt6uqmM6t4jyee3MSpzeA9U5Rz5Hg5JVlwYw1hX04tSDLlN9n3Rby9g==",
+  "dgSpecHash": "ZAuEOnph+O5LCsDhpQBaGR/w/dvjXyq/srmkrw7cW8gv/AASOe4CgI2DudftatkJwI/TjcqxtfJ5F1DvTLJnjA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\DataKlient.iOS.csproj",
+  "projectFilePath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\DataKlient.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\matik\\.nuget\\packages\\fluentftp\\49.0.1\\fluentftp.49.0.1.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\fluentftp.gnutls\\1.0.29\\fluentftp.gnutls.1.0.29.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\fody\\6.6.4\\fody.6.6.4.nupkg.sha512",
+    "C:\\Users\\matik\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\propertychanged.fody\\4.1.0\\propertychanged.fody.4.1.0.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\sqlite-net-pcl\\1.8.116\\sqlite-net-pcl.1.8.116.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.4\\sqlitepclraw.bundle_green.2.0.4.nupkg.sha512",

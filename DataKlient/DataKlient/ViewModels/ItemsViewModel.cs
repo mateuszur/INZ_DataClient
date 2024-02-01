@@ -13,34 +13,48 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using FluentFTP;
 using DataKlient.ViewModels;
+using FluentFTP.Helpers;
+using System.Security.Cryptography;
 
 [assembly: Xamarin.Forms.Dependency(typeof(ItemsViewModel))]
 
 
 namespace DataKlient.ViewModels
 {
+    [QueryProperty(nameof(userId), nameof(userId))]
     public class ItemsViewModel : BaseViewModel
     {
-
-        private SessionLocalDetailsItem _usedSession;
+        private int userId;
+        private Models.SessionLocalDetailsService _usedSession;
 
 
         private FileItem _selectedItem;
         private FileItem item;
-
+        private string filePath="";
         public ObservableCollection<FileItem> FileItems { get; set; }
        
-        
         
         public Command LoadItemsCommand { get; }
        // public Command AddItemCommand { get; }
         public Command<FileItem> ItemTapped { get; }
 
+
+        //Zaczytanie konfiguracji
+        private string serverAddress;
+        private int dataServerPort;
+        private int sFTPPort;
+        private byte[] key;
+        private byte[] iv;
+        private ClientConfig _clientConfig;
+        private ReadConfig _readConfig;
+
+
+
         public ItemsViewModel()
         {
             Title = "Pliki";
-            //tu zaczytanie z serwera
           
+            this.filePath = LocalPathInit();
 
             FileItems = new ObservableCollection<FileItem>();
         
@@ -48,10 +62,20 @@ namespace DataKlient.ViewModels
 
             ItemTapped = new Command<FileItem>(OnItemSelected);
 
-            //   AddItemCommand = new Command(OnAddItem);
+            //inicjalizacja parametrów lokalnych konfiguracji 
+            _clientConfig = new ClientConfig();
+            _readConfig = new ReadConfig();
+            _readConfig.ReadConfiguration(_clientConfig);
+            
+            this.serverAddress = _clientConfig.ServerAddress;
+            this.dataServerPort = _clientConfig.DataServerPort;
+            this.sFTPPort = _clientConfig.SFTPPort;
+            this.key = StringToByteArray(_clientConfig.Key);
+            this.iv = StringToByteArray(_clientConfig.IV);
+
         }
 
-   
+        
 
 
         async Task ExecuteLoadItemsCommand()
@@ -61,7 +85,9 @@ namespace DataKlient.ViewModels
             try
             {
                 FileItems.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                await GetUsedSession();
+                var items = await DataStore.GetItemsAsync(true, _usedSession.userID);
+               
                 if (items != null)
                 {
                     foreach (var item in items)
@@ -137,21 +163,11 @@ namespace DataKlient.ViewModels
 
         private async void OnAddItem_UWP()
         {
-
-
             try
             {
-            
-                var filePath = Path.Combine(FileSystem.AppDataDirectory);
-                filePath = filePath + "\\Download";
                 string new_filepath=await CoppyToAppDataDirectory(filePath);
                 
                 await UploadToServerAsync(new_filepath);
-               // await   GetDataListFromServerAsync();
-                //await ExecuteLoadItemsCommand();
-
-
-
 
             }
             catch (Exception ex)
@@ -193,7 +209,7 @@ namespace DataKlient.ViewModels
         {
             try
             {
-                SessionLocalDetailsService _activeSession = new SessionLocalDetailsService();
+                Services.SessionLocalDetailsService _activeSession = new Services.SessionLocalDetailsService();
                 var _session = await _activeSession.GetItems();
 
                 if (_session != null && _session.Count != 0)
@@ -225,16 +241,16 @@ namespace DataKlient.ViewModels
             {
                 await GetUsedSession();
                 await dataStore.DeleteDatabaseAsync();
-                _client = new TcpClient("185.230.225.4", 3333);
+                _client = new TcpClient(serverAddress, dataServerPort);
                 NetworkStream stream = _client.GetStream();
 
-                byte[] data = Encoding.ASCII.GetBytes("List "+ _usedSession.sessionID+ " "+_usedSession.userID);
+                string plaintext = "List " + _usedSession.sessionID + " " + _usedSession.userID;
+                string encryptedMessage = Convert.ToBase64String(EncryptStringToBytes_Aes(plaintext, key, iv));
+                byte[] data = Encoding.ASCII.GetBytes(encryptedMessage);
                 stream.Write(data, 0, data.Length);
 
                 await Task.Delay(1000);
 
-                //data = new byte[1024];
-                //int bytes = stream.Read(data, 0, data.Length);
 
                 byte[] buffer = new byte[1024];
                 var memoryStream = new MemoryStream();
@@ -251,7 +267,7 @@ namespace DataKlient.ViewModels
 
                 //string responseData = Encoding.ASCII.GetString(data, 0, bytes);
                 string responseData = Encoding.ASCII.GetString(data, 0, data.Length);
-
+                responseData = DecryptStringFromBytes_Aes(Convert.FromBase64String(responseData), key, iv);
 
                 string[] parts = responseData.Split(',');
 
@@ -287,28 +303,37 @@ namespace DataKlient.ViewModels
 
         async Task UploadToServerAsync(string filePath)
         {
+            TcpClient client=null;
             try
             {
                 FileItem fileItem = new FileItem();
                 DataStore dataStore = new DataStore();
                 FileInfo fileInfo = new FileInfo(filePath);
                 long fileSizeInBytes = fileInfo.Length; // Rozmiar pliku w bajtach
-                int fileSizeInMB = (int)fileSizeInBytes / (1024 * 1024); // Rozmiar pliku w megabajtach
+                double fileSizeInMB = Math.Round((double)fileSizeInBytes / (1024 * 1024),3); // Rozmiar pliku w megabajtach
                
                 string extension = Path.GetExtension(filePath); // Rozszerzenie pliku
                 string fileName = Path.GetFileName(filePath); // Nazwa pliku
 
 
-                TcpClient client3 = new TcpClient("185.230.225.4", 3333);
-                NetworkStream stream3 = client3.GetStream();
-                byte[] data = Encoding.ASCII.GetBytes("Upload "+_usedSession.sessionID+" "+ _usedSession.userID+ " " + fileName + " " + extension + " " + fileSizeInMB);
-                stream3.Write(data, 0, data.Length);
+                client= new TcpClient(serverAddress, dataServerPort);
+                NetworkStream stream = client.GetStream();
+
+                string plaintext = "Upload " + _usedSession.sessionID + " " + _usedSession.userID + " " + fileName + " " + extension + " " + fileSizeInMB;
+                string encryptedMessage = Convert.ToBase64String(EncryptStringToBytes_Aes(plaintext, key, iv));
+                byte[] data = Encoding.ASCII.GetBytes(encryptedMessage);
+                stream.Write(data, 0, data.Length);
+
 
                 await Task.Delay(1000);
 
                 data = new byte[256];
-                int bytes = stream3.Read(data, 0, data.Length);
+                int bytes = stream.Read(data, 0, data.Length);
                 string responseData = Encoding.ASCII.GetString(data, 0, bytes);
+                responseData = DecryptStringFromBytes_Aes(Convert.FromBase64String(responseData), key, iv);
+
+                client.Close();
+
 
                 if (responseData.StartsWith("YourPath"))
                 {
@@ -316,25 +341,25 @@ namespace DataKlient.ViewModels
                     string[] parts = responseData.Split(' ');
 
 
-                    string host = "185.230.225.4"; //IP serwera FTP
-                    int portFTP = 3334;
+                    string host = serverAddress; //IP serwera FTP ten sam co DataSerwer
+                    int portFTP = sFTPPort;
                     string path = parts[1];
                     string username = parts[2]; //ze stringa1
                     string passwd = parts[3]; //ze stringa 
 
 
                   
-                        var client = new AsyncFtpClient(host, username, passwd);
-                        client.Port = portFTP;
+                        var _client = new AsyncFtpClient(host, username, passwd);
+                        _client.Port = portFTP;
 
-                        client.Config.EncryptionMode = FtpEncryptionMode.Auto;
-                        client.Config.ValidateAnyCertificate = true;
+                        _client.Config.EncryptionMode = FtpEncryptionMode.Auto;
+                        _client.Config.ValidateAnyCertificate = true;
                       
                     //nawiazanie połaczenia i przesłanie pliku
-                        await client.Connect();
-                        await client.UploadFile(filePath, path);
+                        await _client.Connect();
+                        await _client.UploadFile(filePath, path);
                         await Task.Delay(1000);
-                        await client.Disconnect();
+                        await _client.Disconnect();
 
                     fileItem.FileName = fileName;
                     fileItem.FileSize = fileSizeInMB.ToString();
@@ -353,6 +378,7 @@ namespace DataKlient.ViewModels
             }
             catch (Exception e)
             {
+                client?.Close();
                 Console.WriteLine(e.ToString());
             }
         }
@@ -375,18 +401,18 @@ namespace DataKlient.ViewModels
                 
                 string fullPath = Path.Combine(filePath, fileName);
 
-                //int count = 1;
-                //while (System.IO.File.Exists(fullPath))
-                //{
-                //    string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(fileName);
-                //    string extension = Path.GetExtension(fileName);
-                //    fileName = $"{fileNameWithoutExtension}_{count}{extension}";
-                //    fullPath = Path.Combine(filePath, fileName);
-                //    count++;
-                //}
+                int count = 1;
+                while (System.IO.File.Exists(fullPath))
+                {
+                    string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(fileName);
+                    string extension = Path.GetExtension(fileName);
+                    fileName = $"{fileNameWithoutExtension}_{count}{extension}";
+                    fullPath = Path.Combine(filePath, fileName);
+                    count++;
+                }
 
 
-                if(System.IO.File.Exists(fullPath))
+                if (System.IO.File.Exists(fullPath))
                 {
                    
                     System.IO.File.Delete(fullPath);
@@ -406,5 +432,112 @@ namespace DataKlient.ViewModels
             }
 
         }
+
+
+        private string LocalPathInit()
+        {
+           
+
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                   var path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+                    var outPath = System.IO.Path.Combine(path, "Download");
+                    return outPath;
+                    break;
+
+                case Device.UWP:
+                    var path2 = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+                    var outPath2 = System.IO.Path.Combine(path2, "Download");
+
+                    if (!Directory.Exists(outPath2))
+                    {
+                        Directory.CreateDirectory(outPath2);
+                    }
+
+                    return outPath2;
+                    break;
+                default:
+                    return null;
+                    break;
+            }
+        }
+
+        private static byte[] StringToByteArray(string hex)
+        {
+            int NumberChars = hex.Length;
+            byte[] bytes = new byte[NumberChars / 2];
+            for (int i = 0; i < NumberChars; i += 2)
+                bytes[i / 2] = Convert.ToByte(hex.Substring(i, 2), 16);
+            return bytes;
+        }
+        private static byte[] EncryptStringToBytes_Aes(string plainText, byte[] Key, byte[] IV)
+        {
+            if (plainText == null || plainText.Length <= 0)
+                throw new ArgumentNullException("plainText");
+            if (Key == null || Key.Length <= 0)
+                throw new ArgumentNullException("Key");
+            if (IV == null || IV.Length <= 0)
+                throw new ArgumentNullException("IV");
+
+            byte[] encrypted;
+
+            using (Aes aesAlg = Aes.Create())
+            {
+                aesAlg.Key = Key;
+                aesAlg.IV = IV;
+
+                ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
+
+                using (MemoryStream msEncrypt = new MemoryStream())
+                {
+                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    {
+                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                        {
+                            swEncrypt.Write(plainText);
+                        }
+                        encrypted = msEncrypt.ToArray();
+                    }
+                }
+            }
+
+            return encrypted;
+        }
+
+        private static string DecryptStringFromBytes_Aes(byte[] cipherText, byte[] Key, byte[] IV)
+        {
+            if (cipherText == null || cipherText.Length <= 0)
+                throw new ArgumentNullException("cipherText");
+            if (Key == null || Key.Length <= 0)
+                throw new ArgumentNullException("Key");
+            if (IV == null || IV.Length <= 0)
+                throw new ArgumentNullException("IV");
+
+            string plaintext = null;
+
+            using (Aes aesAlg = Aes.Create())
+            {
+                aesAlg.Key = Key;
+                aesAlg.IV = IV;
+
+                ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
+
+                using (MemoryStream msDecrypt = new MemoryStream(cipherText))
+                {
+                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                    {
+                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                        {
+                            plaintext = srDecrypt.ReadToEnd();
+                        }
+                    }
+                }
+            }
+
+            return plaintext;
+        }
+
+
     }
 }

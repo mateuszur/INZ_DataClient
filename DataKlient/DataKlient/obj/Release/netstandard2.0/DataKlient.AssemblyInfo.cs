@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DataKlient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b2c5f9be21e55b60ad93d8ca75a3683c4560b619")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90e6428682ae938dd2173cf2f2bacc9b91628c7a")]
 [assembly: System.Reflection.AssemblyProductAttribute("DataKlient")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DataKlient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

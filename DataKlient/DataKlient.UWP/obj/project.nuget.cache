@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dRPQLz1N8mOnPnbjNigihcvFCCK36DD++GuFMVOLgvyJvTrzxLoRIphoL4O+cXSHoRXwvOxrNE+dNZ1TCJctag==",
+  "dgSpecHash": "ykT/nzEc6K1Sp9zEylWC2cuizKJJdEj3osZhIhg1NVdfH7oCE3Zqp5mv7DSwdMDlMLKV38ZqF/FYpIfPyqw7Kg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.UWP\\DataKlient.UWP.csproj",
+  "projectFilePath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.UWP\\DataKlient.UWP.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\matik\\.nuget\\packages\\fluentftp\\49.0.1\\fluentftp.49.0.1.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\fluentftp.gnutls\\1.0.29\\fluentftp.gnutls.1.0.29.nupkg.sha512",
@@ -13,6 +13,7 @@
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\microsoft.netcore.universalwindowsplatform\\6.2.14\\microsoft.netcore.universalwindowsplatform.6.2.14.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\microsoft.ui.xaml\\2.4.3\\microsoft.ui.xaml.2.4.3.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\matik\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
     "C:\\Users\\matik\\.nuget\\packages\\propertychanged.fody\\4.1.0\\propertychanged.fody.4.1.0.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform\\6.2.14\\runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform.6.2.14.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm.microsoft.net.native.compiler\\2.2.12-rel-31116-00\\runtime.win10-arm.microsoft.net.native.compiler.2.2.12-rel-31116-00.nupkg.sha512",

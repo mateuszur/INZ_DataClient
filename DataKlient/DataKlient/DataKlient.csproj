@@ -17,6 +17,7 @@
   <ItemGroup>
     <PackageReference Include="FluentFTP" Version="49.0.1" />
     <PackageReference Include="FluentFTP.GnuTLS" Version="1.0.29" />
+    <PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
     <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2622" />  

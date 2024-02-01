@@ -8,10 +8,10 @@ namespace DataKlient.Services
     public  interface ISessionLocalDetailsService
     {
       
-         event EventHandler<SessionLocalDetailsItem> OnSessionAdded;
-         event EventHandler<SessionLocalDetailsItem> OnSessionUpdated;
-         event EventHandler<SessionLocalDetailsItem> OnSessionGet;
+         event EventHandler<Models.SessionLocalDetailsService> OnSessionAdded;
+         event EventHandler<Models.SessionLocalDetailsService> OnSessionUpdated;
+         event EventHandler<Models.SessionLocalDetailsService> OnSessionGet;
 
-        Task<List<SessionLocalDetailsItem>> GetItems();
+        Task<List<Models.SessionLocalDetailsService>> GetItems();
     }
 }

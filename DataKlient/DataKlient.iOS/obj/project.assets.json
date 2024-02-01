@@ -40,6 +40,19 @@
           "build/_._": {}
         }
       },
+      "Portable.BouncyCastle/1.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "PropertyChanged.Fody/4.1.0": {
         "type": "package",
         "dependencies": {
@@ -332,6 +345,7 @@
         "dependencies": {
           "FluentFTP": "49.0.1",
           "FluentFTP.GnuTLS": "1.0.29",
+          "Portable.BouncyCastle": "1.9.0",
           "PropertyChanged.Fody": "4.1.0",
           "Xamarin.Essentials": "1.8.1",
           "Xamarin.Forms": "5.0.0.2622",
@@ -384,6 +398,19 @@
           "build/_._": {}
         }
       },
+      "Portable.BouncyCastle/1.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "PropertyChanged.Fody/4.1.0": {
         "type": "package",
         "dependencies": {
@@ -676,6 +703,7 @@
         "dependencies": {
           "FluentFTP": "49.0.1",
           "FluentFTP.GnuTLS": "1.0.29",
+          "Portable.BouncyCastle": "1.9.0",
           "PropertyChanged.Fody": "4.1.0",
           "Xamarin.Essentials": "1.8.1",
           "Xamarin.Forms": "5.0.0.2622",
@@ -728,6 +756,19 @@
           "build/_._": {}
         }
       },
+      "Portable.BouncyCastle/1.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "PropertyChanged.Fody/4.1.0": {
         "type": "package",
         "dependencies": {
@@ -1020,6 +1061,7 @@
         "dependencies": {
           "FluentFTP": "49.0.1",
           "FluentFTP.GnuTLS": "1.0.29",
+          "Portable.BouncyCastle": "1.9.0",
           "PropertyChanged.Fody": "4.1.0",
           "Xamarin.Essentials": "1.8.1",
           "Xamarin.Forms": "5.0.0.2622",
@@ -1072,6 +1114,19 @@
           "build/_._": {}
         }
       },
+      "Portable.BouncyCastle/1.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "PropertyChanged.Fody/4.1.0": {
         "type": "package",
         "dependencies": {
@@ -1364,6 +1419,7 @@
         "dependencies": {
           "FluentFTP": "49.0.1",
           "FluentFTP.GnuTLS": "1.0.29",
+          "Portable.BouncyCastle": "1.9.0",
           "PropertyChanged.Fody": "4.1.0",
           "Xamarin.Essentials": "1.8.1",
           "Xamarin.Forms": "5.0.0.2622",
@@ -1416,6 +1472,19 @@
           "build/_._": {}
         }
       },
+      "Portable.BouncyCastle/1.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "PropertyChanged.Fody/4.1.0": {
         "type": "package",
         "dependencies": {
@@ -1708,6 +1777,7 @@
         "dependencies": {
           "FluentFTP": "49.0.1",
           "FluentFTP.GnuTLS": "1.0.29",
+          "Portable.BouncyCastle": "1.9.0",
           "PropertyChanged.Fody": "4.1.0",
           "Xamarin.Essentials": "1.8.1",
           "Xamarin.Forms": "5.0.0.2622",
@@ -1817,6 +1887,21 @@
         "netstandardtask/Mono.Cecil.Rocks.pdb",
         "netstandardtask/Mono.Cecil.dll",
         "netstandardtask/Mono.Cecil.pdb"
+      ]
+    },
+    "Portable.BouncyCastle/1.9.0": {
+      "sha512": "eZZBCABzVOek+id9Xy04HhmgykF0wZg9wpByzrWN7q8qEI0Qen9b7tfd7w8VA3dOeesumMG7C5ZPy0jk7PSRHw==",
+      "type": "package",
+      "path": "portable.bouncycastle/1.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/BouncyCastle.Crypto.dll",
+        "lib/net40/BouncyCastle.Crypto.xml",
+        "lib/netstandard2.0/BouncyCastle.Crypto.dll",
+        "lib/netstandard2.0/BouncyCastle.Crypto.xml",
+        "portable.bouncycastle.1.9.0.nupkg.sha512",
+        "portable.bouncycastle.nuspec"
       ]
     },
     "PropertyChanged.Fody/4.1.0": {
@@ -2297,11 +2382,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\DataKlient.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\DataKlient.iOS.csproj",
       "projectName": "DataKlient.iOS",
-      "projectPath": "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\DataKlient.iOS.csproj",
+      "projectPath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\DataKlient.iOS.csproj",
       "packagesPath": "C:\\Users\\matik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\obj\\",
+      "outputPath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -2322,8 +2407,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj": {
-              "projectPath": "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj"
+            "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj": {
+              "projectPath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj"
             }
           }
         }

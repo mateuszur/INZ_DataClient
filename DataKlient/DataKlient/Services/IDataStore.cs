@@ -19,6 +19,6 @@ namespace DataKlient.Services
         Task DeleteItemAsync(int id);
         Task<T> GetItemAsyncByUser(int userid);
         Task<T> GetItemByIdAsync(int id);
-        Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
+        Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false, int userID = 0);
     }
 }

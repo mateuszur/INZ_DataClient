@@ -143,3 +143,4 @@ C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x
 C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\libwinpthread-1.dll
 C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\FluentFTP.GnuTLS.dll
 C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\obj\x64\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_638316334480000000.json
+C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\BouncyCastle.Crypto.dll

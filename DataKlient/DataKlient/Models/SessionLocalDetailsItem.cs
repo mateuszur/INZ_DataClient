@@ -3,7 +3,7 @@ using SQLite;
 
 namespace DataKlient.Models
 {
-    public class SessionLocalDetailsItem
+    public class SessionLocalDetailsService
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

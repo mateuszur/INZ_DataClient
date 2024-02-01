@@ -18,15 +18,7 @@ namespace DataKlient.Services
 
         public DataStore()
         {
-            //items = new List<FileItem>()
-            //{
-            //    new FileItem { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-            //    new FileItem { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-            //    new FileItem { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-            //    new FileItem { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-            //    new FileItem { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-            //    new FileItem { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
-            //};
+          
         }
 
         private async Task CreateConnection()
@@ -123,10 +115,10 @@ namespace DataKlient.Services
 
         }
 
-        public async Task<IEnumerable<FileItem>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<FileItem>> GetItemsAsync(bool forceRefresh = false, int userID = 0)
         {
             await CreateConnection();
-            return await connection.Table<FileItem>().ToArrayAsync();
+            return await connection.Table<FileItem>().Where(x => x.UserID == userID).ToArrayAsync();
            // return await Task.FromResult(items);
         }
     }

@@ -15,7 +15,7 @@ namespace DataKlient.Views
     {
        //inicjalizacja modelu logowania
        private LoginViewModel viewModel = new LoginViewModel();
-     
+       private ItemDetailPage viewModel2 = new ItemDetailPage();
        private string _usernaem;
        private string _password;
 
@@ -26,9 +26,23 @@ namespace DataKlient.Views
         {
 
             InitializeComponent();
-            CheckLocalSessionAsync();
+            CheckServerConfig();
+            
             this.BindingContext = viewModel;
 
+        }
+
+        private async Task CheckServerConfig()
+        {
+            bool result = await viewModel.CheckServerConfig();
+            if (!result)
+            {
+                await DisplayAlert("Błąd", "Brak konfiguracji! Wybierz -> Ustawienia", "OK");
+            }else
+            {
+               await CheckLocalSessionAsync();
+               
+            }
         }
 
         private async void Button_ClickedAsync(object sender, EventArgs e)
@@ -37,10 +51,14 @@ namespace DataKlient.Views
             _password = PasswordEntry.Text;
 
             bool result = await viewModel.OnLoginClickedAsync(_usernaem, _password);
-
-            if (!result)
+            bool result2= await viewModel.CheckServerConfig();
+            if (!result )
             {
                   await DisplayAlert("Błąd", "Podane dane logowania są nieprawidłowe", "OK");
+            }
+            if (!result2)
+            {
+                await DisplayAlert("Błąd", "Brak konfiguracji! Wybierz -> Ustawienia", "OK");
             }
         }
         private async Task<bool> CheckLocalSessionAsync()
@@ -55,6 +73,11 @@ namespace DataKlient.Views
             {
                 return true;
             }
+        }
+
+        private async void SettingsButton(object sender, EventArgs e)
+        {
+            await viewModel.SetSettings();
         }
     }
 

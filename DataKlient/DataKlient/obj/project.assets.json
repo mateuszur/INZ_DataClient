@@ -64,6 +64,19 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "Portable.BouncyCastle/1.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "PropertyChanged.Fody/4.1.0": {
         "type": "package",
         "dependencies": {
@@ -538,6 +551,21 @@
         "lib/netstandard1.0/_._",
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
+      ]
+    },
+    "Portable.BouncyCastle/1.9.0": {
+      "sha512": "eZZBCABzVOek+id9Xy04HhmgykF0wZg9wpByzrWN7q8qEI0Qen9b7tfd7w8VA3dOeesumMG7C5ZPy0jk7PSRHw==",
+      "type": "package",
+      "path": "portable.bouncycastle/1.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/BouncyCastle.Crypto.dll",
+        "lib/net40/BouncyCastle.Crypto.xml",
+        "lib/netstandard2.0/BouncyCastle.Crypto.dll",
+        "lib/netstandard2.0/BouncyCastle.Crypto.xml",
+        "portable.bouncycastle.1.9.0.nupkg.sha512",
+        "portable.bouncycastle.nuspec"
       ]
     },
     "PropertyChanged.Fody/4.1.0": {
@@ -1034,6 +1062,7 @@
       "FluentFTP >= 49.0.1",
       "FluentFTP.GnuTLS >= 1.0.29",
       "NETStandard.Library >= 2.0.3",
+      "Portable.BouncyCastle >= 1.9.0",
       "PropertyChanged.Fody >= 4.1.0",
       "Xamarin.Essentials >= 1.8.1",
       "Xamarin.Forms >= 5.0.0.2622",
@@ -1052,7 +1081,7 @@
       "projectName": "DataKlient",
       "projectPath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\DataKlient.csproj",
       "packagesPath": "C:\\Users\\matik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\matik\\Source\\Repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\obj\\",
+      "outputPath": "C:\\Users\\matik\\source\\repos\\mateuszur\\INZ_Client\\DataKlient\\DataKlient\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -1100,6 +1129,10 @@
             "target": "Package",
             "version": "[2.0.3, )",
             "autoReferenced": true
+          },
+          "Portable.BouncyCastle": {
+            "target": "Package",
+            "version": "[1.9.0, )"
           },
           "PropertyChanged.Fody": {
             "target": "Package",
