@@ -79,10 +79,10 @@
     <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\xamarin.forms\5.0.0.2622\lib\uap10.0.16299\Xamarin.Forms.Xaml.dll">
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\bin\Debug\netstandard2.0\DataKlient.dll">
+    <AppxPackagedFile Include="C:\Users\matik\source\repos\mateuszur\INZ_Client\DataKlient\DataKlient\bin\Debug\netstandard2.0\DataKlient.dll">
       <PackagePath>DataKlient.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\bin\Debug\netstandard2.0\Xamarin.iOS.dll">
+    <AppxPackagedFile Include="C:\Users\matik\source\repos\mateuszur\INZ_Client\DataKlient\DataKlient\bin\Debug\netstandard2.0\Xamarin.iOS.dll">
       <PackagePath>Xamarin.iOS.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">

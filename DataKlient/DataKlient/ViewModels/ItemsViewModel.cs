@@ -15,13 +15,15 @@ using FluentFTP;
 using DataKlient.ViewModels;
 using FluentFTP.Helpers;
 using System.Security.Cryptography;
+using System.Runtime.InteropServices.ComTypes;
 
 [assembly: Xamarin.Forms.Dependency(typeof(ItemsViewModel))]
 
 
 namespace DataKlient.ViewModels
 {
-    [QueryProperty(nameof(userId), nameof(userId))]
+  [QueryProperty(nameof(userId), nameof(userId))]
+  
     public class ItemsViewModel : BaseViewModel
     {
         private int userId;
@@ -48,7 +50,8 @@ namespace DataKlient.ViewModels
         private ClientConfig _clientConfig;
         private ReadConfig _readConfig;
 
-
+        int itemID=0;
+        string itemName="";
 
         public ItemsViewModel()
         {
@@ -195,13 +198,16 @@ namespace DataKlient.ViewModels
 
         async void OnItemSelected(FileItem item)
         {
-            
+
             if (item == null)
+           
                 return;
 
             // This will push the ItemDetailPage onto the navigation stack
-          
-            await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}&{nameof(ItemDetailViewModel.FileName)}={item.FileName}" )    ;
+            this.itemID = item.Id;
+            this.itemName = item.FileName;
+           // await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={item.Id}&{nameof(ItemDetailViewModel.FileName)}={item.FileName}" )    ;
+            await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.ItemId)}={this.itemID}&{nameof(ItemDetailViewModel.FileName)}={this.itemName}" )    ;
         }
 
 

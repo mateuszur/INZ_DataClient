@@ -37,6 +37,8 @@ namespace DataKlient.ViewModels
 
         private string localPath;
 
+        private bool result=false;
+
         //Zaczytanie konfiguracji
         private string serverAddress;
         private int dataServerPort;
@@ -54,16 +56,18 @@ namespace DataKlient.ViewModels
             //inicjalizacja parametrów lokalnych
             _clientConfig = new ClientConfig();
             _readConfig = new ReadConfig();
-            _readConfig.ReadConfiguration(_clientConfig);
 
-            this.serverAddress=_clientConfig.ServerAddress;
-            this.dataServerPort = _clientConfig.DataServerPort;
-            this.sFTPPort = _clientConfig.SFTPPort;
-            this.key = StringToByteArray(_clientConfig.Key);
-            this.iv = StringToByteArray(_clientConfig.IV);
+
+            if (CheckServerConfigSynch())
+            {
+                LicalValueInit();
+
+             
+            }
 
 
             _timer = new System.Threading.Timer(CheckServerAvailability, null, 0, 10000);
+
 
         }
 
@@ -75,6 +79,7 @@ namespace DataKlient.ViewModels
 
             try
             {
+                LicalValueInit();
                 _client = new TcpClient(serverAddress, dataServerPort);
                 NetworkStream stream = _client.GetStream();
 
@@ -200,22 +205,28 @@ namespace DataKlient.ViewModels
 
         public void CheckServerAvailability(object state)
         {
-            // Logika sprawdzająca dostępność serwera
-            Task<bool> temp = CheckServerAsync();
-            bool isServerAvailable = temp.Result;
-            if (isServerAvailable)
+            if (CheckServerConfigSynch())
             {
-                ServerStatusColor = Color.Green;
+                LicalValueInit();
+                // Logika sprawdzająca dostępność serwera
+                Task<bool> temp = CheckServerAsync();
+                bool isServerAvailable = temp.Result;
+                if (isServerAvailable)
+                {
+                    ServerStatusColor = Color.Green;
+                }
+                else
+                {
+                    ServerStatusColor = Color.Red;
+                }
             }
-            else
-            {
-                ServerStatusColor = Color.Red;
-            }
+            else return;
         }
 
 
         private async Task<bool> CheckServerAsync()
         {
+
             TcpClient _client = null;
             try
             {
@@ -406,6 +417,21 @@ namespace DataKlient.ViewModels
         }
 
 
+        public bool CheckServerConfigSynch()
+        {
+            // Logika sprawdzająca dostępność serwera
+            Task<bool> temp = CheckServerConfig();
+            bool isConfig = temp.Result;
+            if (isConfig)
+            {
+             return   true;
+            }
+            else
+            {
+                return  false;
+            }
+        }
+
         public async Task<bool> CheckServerConfig()
         {
             try
@@ -455,10 +481,12 @@ namespace DataKlient.ViewModels
             {
                 case Device.iOS:
                     SetSettingsIOS();
+                    
                     break;
 
                 case Device.UWP:
                     SetSettingsUWP();
+                   
                     break;
             }
         }
@@ -498,7 +526,7 @@ namespace DataKlient.ViewModels
                         stream.Seek(0, SeekOrigin.Begin);
                         stream.CopyTo(fileStream);
                     }
-
+                    _readConfig.ReadConfiguration(_clientConfig);
                     return;
                 }
             }
@@ -522,6 +550,7 @@ namespace DataKlient.ViewModels
             var content = File.ReadAllText(path);
 
             Console.Write("Błąd przy odczycie pliku!");
+            _readConfig.ReadConfiguration(_clientConfig);
         }
 
 
@@ -613,6 +642,24 @@ namespace DataKlient.ViewModels
                 default:
                     return null;
                     break;
+            }
+        }
+
+
+        private void LicalValueInit()
+        {
+            try
+            {
+                _readConfig.ReadConfiguration(_clientConfig);
+                this.serverAddress = _clientConfig.ServerAddress;
+                this.dataServerPort = _clientConfig.DataServerPort;
+                this.sFTPPort = _clientConfig.SFTPPort;
+                this.key = StringToByteArray(_clientConfig.Key);
+                this.iv = StringToByteArray(_clientConfig.IV);
+            }
+            catch (Exception ex)
+            {
+                return;
             }
         }
 

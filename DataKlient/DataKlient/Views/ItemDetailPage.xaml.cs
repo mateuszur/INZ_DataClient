@@ -5,6 +5,7 @@ using Xamarin.Forms;
 
 namespace DataKlient.Views
 {
+  
     public partial class ItemDetailPage : ContentPage
     {
         ItemDetailViewModel _viewModel= new ItemDetailViewModel();
@@ -12,14 +13,12 @@ namespace DataKlient.Views
         public ItemDetailPage()
         {
             InitializeComponent();
-            
 
-            _viewModel.OnStartLocalFileChceck();
-            BindingContext = _viewModel;
-            
-         
+           // _viewModel.OnStartLocalFileChceck();
+            this.BindingContext = _viewModel;
 
         }
+            
 
         public async void DownloadButton(object sender, EventArgs e)
         {

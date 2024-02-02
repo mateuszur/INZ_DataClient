@@ -44,7 +44,14 @@
 
             <!--<Button Text="Zaloguj" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" WidthRequest="170" Command="{Binding LoginCommand, Mode=TwoWay}"  />-->
             <Button Text="Zaloguj" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0" WidthRequest="170"  Clicked="Button_ClickedAsync" />
-            <Button Text="Ustawienia" HorizontalOptions="CenterAndExpand" Margin="0,10,0,0"  WidthRequest="170" Clicked="SettingsButton" />
+            <Button Text="Ustawienia" HorizontalOptions="CenterAndExpand" Margin="0,10,0,0"  WidthRequest="170" Clicked="SettingsButton" >
+                <Button.IsVisible>
+                <OnPlatform x:TypeArguments="x:Boolean">
+                    <On Platform="iOS">False</On>
+                    <On Platform="UWP">True</On>
+                </OnPlatform>
+                </Button.IsVisible>
+                </Button>
             
             <Button Text="Status serwera" HorizontalOptions="CenterAndExpand" Margin="0,10,0,0" WidthRequest="170" 
                 BackgroundColor="{Binding ServerStatusColor}" IsEnabled="True" />

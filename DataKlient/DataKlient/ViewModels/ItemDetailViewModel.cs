@@ -21,7 +21,7 @@ namespace DataKlient.ViewModels
     public class ItemDetailViewModel : BaseViewModel
     {
         private int itemId;
-        private string fileName;
+        private string fileName="";
         private string fileExtension;
         private string fileSize;
         private string dateOfTransfer;
@@ -46,15 +46,15 @@ namespace DataKlient.ViewModels
             //inicjalizacja parametrów lokalnych
             _clientConfig = new ClientConfig();
             _readConfig = new ReadConfig();
-            _readConfig.ReadConfiguration(_clientConfig);
+   //         this.itemId = ItemId;
+     //       this.fileName = FileName;
+            this.localPath = LocalPathInit();
+            if (CheckServerConfigSynch())
+            {
 
-            this.serverAddress = _clientConfig.ServerAddress;
-            this.dataServerPort = _clientConfig.DataServerPort;
-            this.sFTPPort = _clientConfig.SFTPPort;
-            this.key = StringToByteArray(_clientConfig.Key);
-            this.iv = StringToByteArray(_clientConfig.IV);
-            this.localPath=   LocalPathInit();
-
+                LicalValueInit();
+               
+            }
 
         }
 
@@ -97,12 +97,14 @@ namespace DataKlient.ViewModels
         {
             get
             {
-                return itemId;
+                return this.itemId;
             }
             set
             {
-                itemId = value;
-                LoadItemId(value);
+                this.itemId = value;
+
+                LoadItemId(this.itemId);
+                OnStartLocalFileChceck();
             }
         }
 
@@ -112,15 +114,23 @@ namespace DataKlient.ViewModels
             {
                 var item = await DataStore.GetItemByIdAsync(itemId);
              
-                FileName = item.FileName;
-                FileExtension = item.FileType;
-                FileSize= item.FileSize;
+                if (item != null)
+                {
+                    FileName = item.FileName;
+                    FileExtension = item.FileType;
+                    FileSize = item.FileSize;
 
-                string date = item.DateOfTransfer;
-                date = date.Insert(10, " ");
+                    string date = item.DateOfTransfer;
+                    date = date.Insert(10, " ");
 
-                DateOfTransfer = date;
-                OnStartLocalFileChceck();
+                    DateOfTransfer = date;
+                    OnStartLocalFileChceck();
+                }
+                else
+                {
+                    return;
+                }
+               
             }
             catch (Exception)
             {
@@ -160,7 +170,8 @@ namespace DataKlient.ViewModels
             try
             {
                 await GetUsedSession();
-               _client = new TcpClient(serverAddress, dataServerPort);
+                LicalValueInit();
+                _client = new TcpClient(serverAddress, dataServerPort);
                
                 NetworkStream stream = _client.GetStream();
 
@@ -258,7 +269,9 @@ namespace DataKlient.ViewModels
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:
-                    if (File.Exists(localPath + "/" + fileName))
+                   
+                    var pathiOS = System.IO.Path.Combine(localPath, fileName);
+                    if (File.Exists(pathiOS))
                     {
                         IsFileLocal = true;
                         return true;
@@ -274,7 +287,9 @@ namespace DataKlient.ViewModels
 
 
                     case Device.UWP:
-                    if (File.Exists(localPath + "\\" + fileName))
+                    LoadItemId(itemId);
+                    var pathUWP= System.IO.Path.Combine(localPath, fileName);
+                    if (File.Exists(pathUWP))
                     {
                         IsFileLocal = true;
                         return true;
@@ -397,6 +412,7 @@ namespace DataKlient.ViewModels
             try
             {
                 await GetUsedSession();
+                LicalValueInit();
                 _client = new TcpClient(serverAddress, dataServerPort);
                 NetworkStream stream = _client.GetStream();
 
@@ -444,6 +460,80 @@ namespace DataKlient.ViewModels
             }
         }
 
+
+        public bool CheckServerConfigSynch()
+        {
+            // Logika sprawdzająca dostępność serwera
+            Task<bool> temp = CheckServerConfig();
+            bool isConfig = temp.Result;
+            if (isConfig)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public async Task<bool> CheckServerConfig()
+        {
+            try
+            {
+                switch (Device.RuntimePlatform)
+                {
+                    case Device.iOS:
+                        if (!File.Exists(localPath + "/config.txt"))
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                        break;
+
+                    case Device.UWP:
+                        if (!File.Exists(localPath + "\\config.txt"))
+                        {
+                            return false;
+                        }
+                        else
+                        {
+                            return true;
+                        }
+                        break;
+
+                    default:
+                        return false;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
+
+        private void LicalValueInit()
+        {
+            try
+            {
+                _readConfig.ReadConfiguration(_clientConfig);
+                this.serverAddress = _clientConfig.ServerAddress;
+                this.dataServerPort = _clientConfig.DataServerPort;
+                this.sFTPPort = _clientConfig.SFTPPort;
+                this.key = StringToByteArray(_clientConfig.Key);
+                this.iv = StringToByteArray(_clientConfig.IV);
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
+        }
 
         static byte[] StringToByteArray(string hex)
         {
