@@ -30,7 +30,7 @@
     <AppXManifest Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-02-02T12:43:12.353</Modified>
+      <Modified>2024-02-03T02:49:46.061</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -106,11 +106,11 @@
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
       <Modified>2023-11-09T13:18:32.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\matik\source\repos\mateuszur\INZ_Client\DataKlient\DataKlient\bin\Debug\netstandard2.0\DataKlient.dll">
+    <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\bin\Debug\netstandard2.0\DataKlient.dll">
       <PackagePath>DataKlient.dll</PackagePath>
-      <Modified>2024-02-02T12:43:05.594</Modified>
+      <Modified>2024-02-02T13:21:22.739</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\matik\source\repos\mateuszur\INZ_Client\DataKlient\DataKlient\bin\Debug\netstandard2.0\Xamarin.iOS.dll">
+    <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient\bin\Debug\netstandard2.0\Xamarin.iOS.dll">
       <PackagePath>Xamarin.iOS.dll</PackagePath>
       <Modified>2024-01-27T23:48:45.800</Modified>
     </AppxPackagedFile>
@@ -311,11 +311,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2024-02-02T12:43:11.151</Modified>
+      <Modified>2024-02-03T02:49:43.954</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2024-02-02T12:43:11.152</Modified>
+      <Modified>2024-02-03T02:49:43.954</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.22621.0\\redist\Debug\X64\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -335,7 +335,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\matik\Source\Repos\mateuszur\INZ_Client\DataKlient\DataKlient.UWP\bin\x64\Debug\Core\DataKlient.UWP.exe">
       <PackagePath>DataKlient.UWP.exe</PackagePath>
-      <Modified>2024-02-02T12:43:12.346</Modified>
+      <Modified>2024-02-03T02:49:46.050</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
